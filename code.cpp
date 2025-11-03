@@ -21,29 +21,13 @@ void open(string s)
 int main()
 {
 	open("");
-	string s;
-	cin>>s;
-	string c;
-	for(int i = 0; i < s.size(); i++)
-	{
-		if(s[i] <= 'Z' && s[i] >= 'A')
-		{
-			if(i == 0)
-			{
-				c += tolower(s[i]);
-			}
-			else
-			{
-				c += '_';
-				c += tolower(s[i]);
-			}
-		}
-		else
-		{
-			c += s[i];
-		}
-	}
-	cout<<c;
+	ll n;
+	cin>>n;
+	ll a = (n - 1) / 2;
+	ll b = a * (a + 1) / 2;
+	ll c = a * n;
+	ll d = c - 2 * b;
+	cout << d;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
