@@ -18,29 +18,37 @@ void open(string s)
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
 }
-
 signed main()
 {
     open("");
-    ll n;
+    int n;
     cin >> n;
-    unordered_map<ll, ll> m;
-    for (ll i = 0; i < n; ++i)
+    vector<long long> a(n + 1);
+    for (int i = 1; i <= n; i++) 
     {
-        ll a, b;
-        cin >> a >> b;
-        m[a]++;
+        cin >> a[i];
     }
-    ll r = 0;
-    for (auto const& p : m)
+    vector<long long> suf(n + 2, 0);
+    long long mx = a[n];
+    for (int i = n - 1; i >= 1; i--)
     {
-        ll k = p.second;
-        if (k > 1)
+        if (a[i] < mx)
+            suf[i] = suf[i + 1] + (mx - a[i]);
+        else
         {
-            r += k * (k - 1) / 2;
+            mx = a[i];
+            suf[i] = suf[i + 1];
         }
     }
-    cout << r << "\n";
-    
+
+    int q;
+    cin >> q;
+    while (q--)
+    {
+        int t;
+        cin >> t;
+        cout << suf[t] << "\n";
+    }
+
     return 0;
 }

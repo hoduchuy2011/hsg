@@ -21,20 +21,14 @@ void open(string s)
 signed main()
 {
 	open("");
-	sang();
-	int l, r;
-	cin>>l>>r;
-	ll res = 0;
-	for(int i = l; i <= r; i++)
-	{
-        if (i < nmax && i >= 1) { 
-            if(check(i))
-            {
-                res += i;
-            }
-        }
-	}
-	cout<<res;
+	ll X, Y, Z;
+    cin >> X >> Y >> Z;
+    ll T0 = 0;
+    if (X > Y)
+    {
+        T0 = ((X - Y) * Z + Y - 1) / Y;
+    }
+    cout<<T0;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
