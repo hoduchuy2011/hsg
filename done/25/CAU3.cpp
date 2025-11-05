@@ -49,7 +49,7 @@ bool pal(int n)
 
 signed main()
 {
-    open("");
+    open("CAU3");
     sieve();
     int a, b;
     cin >> a >> b;

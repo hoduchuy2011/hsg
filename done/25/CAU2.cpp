@@ -20,25 +20,15 @@ void open(string s)
 }
 int main()
 {
-	open("TANGQUA");
-	int n;
+	open("CAU2");
+	ll n;
 	cin>>n;
-	vector<ll> a(n);
-	for(int i = 0; i < n; i++)
-	{
-		cin>>a[i];
-	}
-	sort(all(a), greater<ll>());
-	ll s = 1;
-	for(int i = 1; i < n; i++)
-	{
-		if(a[i] != a[i - 1])
-		{
-			break;
-		}
-		s++;
-	}
-	cout<<s;
+	ll a = (n - 1) / 2;
+	ll b = a * (a + 1) / 2;
+	ll c = a * n;
+	ll d = c - 2 * b;
+	cout << d;
 
+	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }

@@ -18,30 +18,28 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-int main()
+signed main()
 {
-	open("THUASONT");
-	ll n;
-	cin>>n;
-	map<ll, int> a;
-	for(ll i = 2; i * i <= n; i++)
-	{
-		while(n % i == 0)
-		{
-			a[i]++;
-			n /= i;
-		}
-	}
-	if(n != 1)
-	{
-		a[n]++;
-	}
-	cout<<a.size()<<"\n";
-	for(auto i : a)
-	{
-		cout<<i.fi<<" "<<i.se<<"\n";
-	}
+	open("CAU4");
+    ll n;
+    cin >> n;
+    map<ll, ll> m;
+    for (ll i = 0; i < n; ++i)
+    {
+        ll a, b;
+        cin >> a >> b;
+        m[a]++;
+    }
+    ll r = 0;
+    for (auto const& p : m)
+    {
+        ll k = p.second;
+        if (k > 1)
+        {
+            r += k * (k - 1) / 2;
+        }
+    }
+    cout << r << "\n";
 
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
-	return 0;
+    return 0;
 }
