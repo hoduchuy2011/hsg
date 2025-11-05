@@ -18,28 +18,29 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+
 signed main()
 {
 	open("CAU4");
-    ll n;
-    cin >> n;
-    map<ll, ll> m;
-    for (ll i = 0; i < n; ++i)
-    {
-        ll a, b;
-        cin >> a >> b;
-        m[a]++;
-    }
-    ll r = 0;
-    for (auto const& p : m)
-    {
-        ll k = p.second;
-        if (k > 1)
-        {
-            r += k * (k - 1) / 2;
-        }
-    }
-    cout << r << "\n";
-
-    return 0;
+	ll n;
+	cin >> n;
+	unordered_map<ll, ll> m;
+	for (ll i = 0; i < n; ++i)
+	{
+		ll a, b;
+		cin >> a >> b;
+		m[a]++;
+	}
+	ll r = 0;
+	for (auto const& p : m)
+	{
+		ll k = p.second;
+		if (k > 1)
+		{
+			r += k * (k - 1) / 2;
+		}
+	}
+	cout << r << "\n";
+	
+	return 0;
 }

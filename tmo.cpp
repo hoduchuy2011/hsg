@@ -18,54 +18,29 @@ void open(string s)
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(NULL);
 }
-int d[10000005];
-int n = 10000000;
-void sieve() 
-{
-    for (int i = 2; i <= n; i++) 
-    {
-        if (d[i] == 0) 
-        {
-            for (int j = i; j <= n; j += i) 
-            {
-                d[j]++;
-            }
-        }
-    }
-}
-
-bool pal(int n) 
-{
-    int k = n;
-    int r = 0;
-    while (k > 0) 
-    {
-        r = r * 10 + k % 10;
-        k /= 10;
-    }
-    return n == r;
-}
-
 
 signed main()
 {
     open("");
-    sieve();
-    int a, b;
-    cin >> a >> b;
-    ll s = 0;
-    for (int i = a; i <= b; i++) 
+    ll n;
+    cin >> n;
+    unordered_map<ll, ll> m;
+    for (ll i = 0; i < n; ++i)
     {
-        if (d[i] >= 3) 
+        ll a, b;
+        cin >> a >> b;
+        m[a]++;
+    }
+    ll r = 0;
+    for (auto const& p : m)
+    {
+        ll k = p.second;
+        if (k > 1)
         {
-            if (pal(i)) 
-            {
-                s += i;
-            }
+            r += k * (k - 1) / 2;
         }
     }
-
-    cout << s;
-
+    cout << r << "\n";
+    
     return 0;
 }
