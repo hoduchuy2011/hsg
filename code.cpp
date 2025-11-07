@@ -21,14 +21,26 @@ void open(string s)
 signed main()
 {
 	open("");
-	ll X, Y, Z;
-    cin >> X >> Y >> Z;
-    ll T0 = 0;
-    if (X > Y)
-    {
-        T0 = ((X - Y) * Z + Y - 1) / Y;
-    }
-    cout<<T0;
+	int m, n, res = 0;
+	cin>>m>>n;
+	vector<vector<int>> a(n, vector<int>(m));
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = 0; j < n; j++)
+		{
+			cin>>a[i][j];
+		}
+	}
+	for(int i = 0; i < m; i++)
+	{
+		for(int j = 0; j < n; j++)
+		{
+			if(i == 0 && j == 0)
+			{
+				if(a[i][j] < )
+			}
+		}
+	}
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
