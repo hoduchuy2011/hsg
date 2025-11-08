@@ -20,31 +20,24 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("CAU2");
 	int n;
-	cin>>n;
-	string s;
-	cin>>s;
-	int i = 0, sz = 0, tmp = 0, res = 0;
-	for(int i = 0; i < n; i++)
+	cin >> n;
+	vector<int> a(n);
+	unordered_set<int> s;
+	for (int i = 0; i < n; i++) 
 	{
-		if(s[i] == '1')
+		cin >> a[i];
+		s.insert(a[i]);
+	}
+	int res = 0;
+	for (int x : a) 
+	{
+		if (s.find(-x) != s.end()) 
 		{
-			sz = max(sz, tmp);
-			tmp = 0;
 			res++;
 		}
-		if(s[i] == '0')
-		{
-			tmp++;
-		}
 	}
-	if(tmp != 0)
-	{
-		sz = max(sz, tmp);
-	}
-	cout<<res + sz;
-	
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
+	cout << res / 2;
 	return 0;
 }

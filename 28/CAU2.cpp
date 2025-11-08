@@ -20,31 +20,32 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	int n;
-	cin>>n;
+	open("CAU2");
 	string s;
-	cin>>s;
-	int i = 0, sz = 0, tmp = 0, res = 0;
-	for(int i = 0; i < n; i++)
+	int k;
+	cin >> s >> k;
+	string d;
+	for (char c : s) 
 	{
-		if(s[i] == '1')
+		if (isdigit(c)) 
 		{
-			sz = max(sz, tmp);
-			tmp = 0;
-			res++;
-		}
-		if(s[i] == '0')
-		{
-			tmp++;
+			d.push_back(c);
 		}
 	}
-	if(tmp != 0)
+	string r;
+	int m = d.length() - k;
+	for (char c : d) 
 	{
-		sz = max(sz, tmp);
+		while (!r.empty() && c > r.back() && m > 0) 
+		{
+			r.pop_back();
+			m--;
+		}
+		r.push_back(c);
 	}
-	cout<<res + sz;
-	
+	r.resize(k);
+	cout << r;
+
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }

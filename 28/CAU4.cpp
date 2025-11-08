@@ -20,18 +20,21 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("CAU4");
 	vector<ll> p = {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97};
 	ll t;
 	cin >> t;
-	while (t--) {
+	while (t--) 
+	{
 		ll a, b;
 		cin >> a >> b;
 		map<ll, ll> m;
-		for (ll i = a; i <= b; i++) {
+		for (ll i = a; i <= b; i++) 
+		{
 			ll temp = i;
 			for (ll k : p) {
-				while (temp > 0 && temp % k == 0) {
+				while (temp > 0 && temp % k == 0) 
+				{
 					m[k]++;
 					temp /= k;
 				}
@@ -39,7 +42,8 @@ signed main()
 		}
 		
 		ll ans = 1;
-		for (auto const& e : m) {
+		for (auto const& e : m) 
+		{
 			ans = (ans * (2 * e.second + 1)) % mod;
 		}
 		cout << ans << "\n";

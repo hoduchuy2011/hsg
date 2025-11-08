@@ -20,7 +20,7 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("CAU3");
 	int n;
 	cin>>n;
 	string s;

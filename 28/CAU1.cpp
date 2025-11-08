@@ -20,30 +20,11 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	int n;
-	cin>>n;
-	string s;
-	cin>>s;
-	int i = 0, sz = 0, tmp = 0, res = 0;
-	for(int i = 0; i < n; i++)
-	{
-		if(s[i] == '1')
-		{
-			sz = max(sz, tmp);
-			tmp = 0;
-			res++;
-		}
-		if(s[i] == '0')
-		{
-			tmp++;
-		}
-	}
-	if(tmp != 0)
-	{
-		sz = max(sz, tmp);
-	}
-	cout<<res + sz;
+	open("CAU1");
+	vector<int> a(4);
+	cin>>a[0]>>a[1]>>a[2]>>a[3];
+	sort(all(a));
+	cout<<a[0] * a[2];
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
