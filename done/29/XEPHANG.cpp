@@ -10,44 +10,53 @@ using namespace std;
 
 void open(string s)
 {
-	if(fopen((s + ".INP").c_str(), "r"))
-	{
-		freopen((s + ".INP").c_str(), "r", stdin);
-		freopen((s + ".OUT").c_str(), "w", stdout);
-	}
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
+    if(fopen((s + ".INP").c_str(), "r"))
+    {
+        freopen((s + ".INP").c_str(), "r", stdin);
+        freopen((s + ".OUT").c_str(), "w", stdout);
+    }
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL); cout.tie(NULL);
 }
 signed main()
 {
-	open("XEPHANG");
+    open("XEPHANG");
     int n, k;
-    cin >> n >> k;
-    vector<int> a(2 * n + 1);
-    for (int i = 1; i <= n; i++) 
+    cin>>n>>k;
+    vector<bool> f(2 * n + 1, 0);//1 = nam, 0 = nu
+    for(int i = 1; i <= n; i++)
     {
-    	a[i] = 1;
+        f[i] = 1;
     }
-    for (int i = n + 1; i <= 2 * n; i++) 
-    {
-    	a[i] = 0;
-    }
+    int cnt = n;
     while (k--)
     {
         int x, y;
         cin >> x >> y;
-        swap(a[x], a[y]);
-        int c = 0;
-        for (int i = 1; i <= n; i++)
+        bool a = f[x], b = f[y];
+        if (a != b)
         {
-            if (a[i] == 1) 
+            if (x <= n && y > n)
             {
-            	c++;
+                cnt -= a;
+            }
+            else if (y <= n && x > n)
+            {
+                cnt -= b;
+            }
+            if (x <= n && y > n)
+            {
+                cnt += b;
+            }
+            else if (y <= n && x > n)
+            {
+                cnt += a;
             }
         }
-        cout << c << "\n";
+        swap(f[x], f[y]);
+        cout << cnt << "\n";
     }
     
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
-	return 0;
+    cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
+    return 0;
 }

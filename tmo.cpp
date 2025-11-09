@@ -1,101 +1,55 @@
+// De bai: Dem xem co bao nhieu hoc sinh nam dung o nua dau sau moi lan doi cho
 #include <bits/stdc++.h>
 #define ll long long
-#define st string
-#define fi first
-#define se second
-#define mod 1000000007
-#define all(x) x.begin(), x.end()
-
 using namespace std;
 
 void open(string s)
 {
-	if(fopen((s + ".INP").c_str(), "r"))
-	{
-		freopen((s + ".INP").c_str(), "r", stdin);
-		freopen((s + ".OUT").c_str(), "w", stdout);
-	}
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
-}
-
-int n;
-ll m;
-vector<ll> a;
-
-bool c(ll h)
-{
-    ll t = 0;
-    for (int i = 0; i < n; ++i)
+    if (fopen((s + ".INP").c_str(), "r"))
     {
-        if (a[i] > h)
-        {
-            t += (a[i] - h);
-        }
-        
-        if (t >= m)
-        {
-            return true;
-        }
+        freopen((s + ".INP").c_str(), "r", stdin);
+        freopen((s + ".OUT").c_str(), "w", stdout);
     }
-    return t >= m;
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 }
 
 signed main()
 {
-	open("");
+    open("XEPHANG");
 
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    int n, k;
+    cin >> n >> k;
 
-    cin >> n >> m;
+    vector<bool> f(2 * n + 1);
+    for (int i = 1; i <= n; i++) f[i] = 1; // boys first
 
-    a.resize(n);
-    ll mn = 2e9;
-    ll mx = 0;
+    int cnt = n; // currently all n boys in the first half
 
-    for (int i = 0; i < n; ++i)
+    while (k--)
     {
-        cin >> a[i];
-        if (a[i] < mn)
+        int x, y;
+        cin >> x >> y;
+
+        bool a = f[x], b = f[y];
+
+        // Only if they differ and one is in first half, one in second
+        if (a != b)
         {
-            mn = a[i];
+            if (x <= n && y > n)
+                cnt -= a; // if boy moved out, -1; if girl moved out, 0
+            else if (y <= n && x > n)
+                cnt -= b;
+            if (x <= n && y > n)
+                cnt += b; // if girl moved in -> +0, if boy moved in -> +1
+            else if (y <= n && x > n)
+                cnt += a;
         }
-        if (a[i] > mx)
-        {
-            mx = a[i];
-        }
+
+        swap(f[x], f[y]);
+        cout << cnt << "\n";
     }
 
-    ll s = 0;
-    for (int i = 0; i < n; ++i)
-    {
-        if (a[i] > mn)
-        {
-            s += (a[i] - mn);
-        }
-    }
-    cout << s << "\n";
-
-    ll ans = -1;
-    ll l = 0;
-    ll r = mx;
-
-    while (l <= r)
-    {
-        ll mid = l + (r - l) / 2;
-        if (c(mid))
-        {
-            ans = mid;
-            l = mid + 1;
-        }
-        else
-        {
-            r = mid - 1;
-        }
-    }
-    
-    cout << ans << "\n";
-
+    cerr << "Time elapsed: " << 1.0 * clock() / CLOCKS_PER_SEC << "s\n";
     return 0;
 }
