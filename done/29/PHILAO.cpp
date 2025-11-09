@@ -43,7 +43,7 @@ bool c(ll h)
 
 signed main()
 {
-	open("");
+	open("PHILAO");
 
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

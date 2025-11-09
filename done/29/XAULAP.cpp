@@ -20,15 +20,28 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	int n, m;
-	cin>>n>>m;
-	vector<int> a(n);
-	for(int i = 0; i < n; i++)
+	open("XAULAP");
+	int n;
+	cin>>n;
+	string s;
+	cin >> s;
+	ll t = (ll)n * (n + 1) / 2;
+	ll u = 0;
+	vector<int> f(26, 0);
+	int i = 0;
+	for (int j = 0; j < n; ++j)
 	{
-		cin>>a[i];
+		f[s[j] - 'a']++;
+		while (f[s[j] - 'a'] > 1)
+		{
+			f[s[i] - 'a']--;
+			i++;
+		}
+		u += (j - i + 1);
 	}
-
+	ll r = t - u;
+	cout<<r;
+	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }

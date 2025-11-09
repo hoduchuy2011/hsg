@@ -18,16 +18,46 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+const int nmax = 1e6+7;
+vector<bool> f(nmax, 1);
+void sang()
+{
+	f[0] = f[1] = 0;
+	for(int i = 2; i*i <= nmax; i++)
+	{
+		if(f[i])
+		{
+			for(int j = i*i; j <= nmax; j += i)
+			{
+				f[j] = 0;
+			}
+		}
+	}
+}
+int tcs(int n)
+{
+	if(n == 0)
+	{
+		return 0;
+	}
+	return (n % 10) + tcs(n / 10);
+}
 signed main()
 {
-	open("");
-	int n, m;
-	cin>>n>>m;
-	vector<int> a(n);
-	for(int i = 0; i < n; i++)
+	open("SOTC");
+	sang();
+	int n, k;
+	cin>>n>>k;
+	int res = 0;
+	for(int i = 2; i < n; i++)
 	{
-		cin>>a[i];
+		if(f[i] && tcs(i) == k)
+		{
+			cout<<i<<"\n";
+			res++;
+		}
 	}
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

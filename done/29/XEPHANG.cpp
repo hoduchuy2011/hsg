@@ -20,15 +20,34 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	int n, m;
-	cin>>n>>m;
-	vector<int> a(n);
-	for(int i = 0; i < n; i++)
-	{
-		cin>>a[i];
-	}
-
+	open("XEPHANG");
+    int n, k;
+    cin >> n >> k;
+    vector<int> a(2 * n + 1);
+    for (int i = 1; i <= n; i++) 
+    {
+    	a[i] = 1;
+    }
+    for (int i = n + 1; i <= 2 * n; i++) 
+    {
+    	a[i] = 0;
+    }
+    while (k--)
+    {
+        int x, y;
+        cin >> x >> y;
+        swap(a[x], a[y]);
+        int c = 0;
+        for (int i = 1; i <= n; i++)
+        {
+            if (a[i] == 1) 
+            {
+            	c++;
+            }
+        }
+        cout << c << "\n";
+    }
+    
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }
