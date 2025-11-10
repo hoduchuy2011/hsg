@@ -20,7 +20,7 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("GAME");
 	int n, k;
 	cin>>n>>k;
 	vector<int> a(n + 1);

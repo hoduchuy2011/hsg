@@ -19,12 +19,13 @@ int main() {
 	mt19937_64 rng(time(0));
 	// Sinh n trong [0, 1e6]
 	uniform_int_distribution<long long> dist_n(0, 1e5);
-	int n = dist_n(rng);
+	//int n = dist_n(rng);
+	int n = 1e5;
 
-	fout << n << " " << n - 1 << "\n";
+	fout << n << "\n";
 
 	// Sinh n số trong [0, 1e9]
-	uniform_int_distribution<long long> dist_val(0, 1e9);
+	uniform_int_distribution<long long> dist_val(0, 1e6);
 	for (int i = 0; i < n; ++i) {
 		fout << dist_val(rng);
 		if (i != n - 1) fout << " ";
