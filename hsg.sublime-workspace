@@ -1,0 +1,762 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"er",
+				"erase"
+			],
+			[
+				"e",
+				"erase"
+			],
+			[
+				"cnt",
+				"cnt0"
+			],
+			[
+				"push",
+				"push_back"
+			],
+			[
+				"1",
+				"1000006"
+			],
+			[
+				"BAI",
+				"BAI1"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "code.cpp",
+			"settings":
+			{
+				"buffer_size": 884,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/code/c++/code.cpp",
+			"settings":
+			{
+				"buffer_size": 595,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".INP",
+			"settings":
+			{
+				"buffer_size": 16,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAEAAAAAAAAAAmAAAANSAzCiAgMTAgMjUgMzUgNDAgMjAKMCAxMCAxNSAyNSAzMCAyMAo",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": ".OUT",
+			"settings":
+			{
+				"buffer_size": 2,
+				"line_ending": "Windows"
+			},
+			"undo_stack":
+			[
+				[
+					1,
+					1,
+					"revert",
+					null,
+					"BQAAAAAAAAAAAAAAAAAAAAAAAAACAAAAMjAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
+	],
+	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"can",
+				"Build: Cancel"
+			],
+			[
+				"ca",
+				"Build: Cancel"
+			],
+			[
+				"debug",
+				"Package Control: Enable Debug Mode"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"isnta",
+				"Package Control: Install Package"
+			],
+			[
+				"preferences: key",
+				"Preferences: Key Bindings"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"scheem",
+				"UI: Select Color Scheme"
+			],
+			[
+				"package",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/hsg"
+	],
+	"file_history":
+	[
+		"/D/code/c++/code.cpp",
+		"/D/hsg/done/30/CDIV.cpp",
+		"/D/code/c++/.OUT",
+		"/D/code/c++/.INP",
+		"/D/code/owofarmbot_stable/config.json",
+		"/D/code/owofarmbot_stable/bot.js",
+		"/D/code/c++/tmp.cpp",
+		"/D/hsg/.OUT",
+		"/D/hsg/.INP",
+		"/D/hsg/tmo.cpp",
+		"/D/hsg/code.cpp",
+		"/D/hsg/done/29/XEPHANG.cpp",
+		"/D/hsg/29/PHILAO.cpp",
+		"/D/hsg/29/XAULAP.cpp",
+		"/D/hsg/29/XEPHANG.cpp",
+		"/D/hsg/29/SOTC.cpp",
+		"/D/hsg/done/28/CAU4.cpp",
+		"/D/hsg/done/28/CAU1.cpp",
+		"/D/code/c++/fr/test/DAUTHAU.cpp",
+		"/D/Tin Xã ND/code/chosebook.cpp",
+		"/D/code/c++/fr/code/dauthau.cpp",
+		"/D/code/c++/test/CHOSEBOOK.cpp",
+		"/D/code/c++/test/DAUTHAU.cpp",
+		"/D/Tin Xã ND/Test/dauthau/TEST002/dauthau.OUT",
+		"/D/Tin Xã ND/code/dauthau.cpp",
+		"/D/Tin Xã ND/Test/dauthau/TEST002/dauthau.INP",
+		"/D/code/c++/test/UOC.cpp",
+		"/D/code/c++/test/TONG.cpp",
+		"/D/hsg/README.md",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test19/MANGCON.out",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test19/MANGCON.inp",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test00/MANGCON.out",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test00/MANGCON.inp",
+		"/D/code/c++/test/MANGCON.cpp",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test03/MANGCON.inp",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test02/MANGCON.inp",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test01/MANGCON.out",
+		"/D/code/Xã Diễn Châu/TEST/MANGCON/test01/MANGCON.inp",
+		"/D/code/c++/test/DIAMOND.cpp",
+		"/D/code/c++/test/TREE.cpp",
+		"/D/code/Xã Diễn Châu/TEST/TREE/test00/TREE.inp",
+		"/D/code/c++/test/PK.cpp",
+		"/C/Users/HT/AppData/Roaming/vesktop/themes/a.css",
+		"/C/Users/HT/AppData/Roaming/Vencord/themes/a.css",
+		"/D/code/owo-blackjack-bot/tokens.json",
+		"/D/code/hsg/.git/config",
+		"/D/code/hsg/.git/index",
+		"/D/code/hsg/26/VNI.cpp",
+		"/D/code/hsg/26/TBG.cpp",
+		"/D/code/hsg/26/DRB.cpp",
+		"/D/code/hsg/26/ARN.cpp",
+		"/D/code/test/TAMGIAC/Test09/TAMGIAC.INP",
+		"/D/code/test/TAMGIAC/Test09/TAMGIAC.OUT",
+		"/D/code/monkeytype-hack/mun nai/TAMGIAC.CPP",
+		"/D/code/test/TAMGIAC/TAMGIAC.CPP",
+		"/D/code/monkeytype-hack/python/TAMGIAC.py",
+		"/D/code/test/TAMGIAC/Test10/TAMGIAC.INP",
+		"/D/code/test/TAMGIAC/Test03/TAMGIAC.INP",
+		"/D/code/test/TAMGIAC/Test03/TAMGIAC.OUT",
+		"/D/code/mun nai/TAMGIAC.CPP",
+		"/D/code/c++/23/UocNT.cpp",
+		"/C/Users/HT/AppData/Roaming/discordcanary/settings.json",
+		"/D/code/c++/23/ChonSach.cpp",
+		"/D/code/c++/23/TrungThuong.cpp",
+		"/D/code/owo-blackjack-bot/bot.js",
+		"/D/code/owo-blackjack-bot/config.json",
+		"/D/code/owo-blackjack-bot/trainer/blackjacktrainer.py",
+		"/D/code/owo-blackjack-bot/utils/q_values.json",
+		"/D/code/owo-blackjack-bot/trainer/q_values.json",
+		"/D/code/owo-blackjack-bot/utils/captcha.js",
+		"/D/code/owo-blackjack-bot/utils/logger.js",
+		"/D/code/owofarmbot_stable - Copy/config.json",
+		"/D/code/c++/23/MatKhau.cpp",
+		"/C/Users/HT/AppData/Roaming/Vencord/settings/settings.json",
+		"/D/code/hsgtinh/22/B2.cpp",
+		"/D/code/rvc-realtime-voice-changer/README.md",
+		"/D/code/a.py",
+		"/D/code/gg.cpp",
+		"/D/code/email.py",
+		"/D/code/pip.py",
+		"/C/Users/HT/Downloads/vencord-settings-backup-2025-09-11.json",
+		"/C/Users/HT/Downloads/vencordDesktopMain.js",
+		"/D/code/hsgtinh/.OUT",
+		"/D/code/hsgtinh/.INP",
+		"/D/code/hsgtinh/code.cpp",
+		"/D/code/hsgtinh/22/B3.cpp",
+		"/D/code/smtp_mail_bot_server/main.py",
+		"/D/code/hsgtinh/22/B1.cpp",
+		"/D/code/DDoS-Ripper/DRipper Free/DRipper.py",
+		"/C/Users/HT/Downloads/BAI2.cpp",
+		"/D/code/ChatGPT/1/main.py",
+		"/D/code/c++/15/BAI5.cpp",
+		"/D/code/c++/15/BAI4.cpp",
+		"/D/code/c++/13/Jumfrog.cpp",
+		"/D/code/c++/13/DOANCON.cpp",
+		"/D/code/c++/13/SPECEAL.cpp",
+		"/D/code/c++/13/TONG.cpp",
+		"/C/Users/HT/Downloads/MHDDoS/config.json",
+		"/C/Users/HT/AppData/Roaming/vesktop/settings.json",
+		"/D/code/Theme11.json",
+		"/D/code/c++/10/BAI4.cpp",
+		"/D/code/c++/idk/10/BAI4.cpp",
+		"/D/code/c++/10/BAI1.cpp",
+		"/C/Users/HT/Downloads/DDoS_Attack/run.py",
+		"/D/code/c++/12/CAYTHONG.cpp",
+		"/C/Users/HT/Downloads/Saphyra-DDoS/Saphyra.py",
+		"/D/code/c++/12/CHINHPHUONG.cpp",
+		"/C/Users/HT/Downloads/giveaway_summary.json",
+		"/C/Users/HT/AppData/Roaming/vesktop/settings/quickCss.css",
+		"/D/code/c++/10/BAI3.cpp",
+		"/D/code/c++/10/BAI2.cpp",
+		"/C/Users/HT/AppData/Roaming/Sublime Text/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/HT/AppData/Roaming/Sublime Text/Packages/User/Preferences.sublime-settings",
+		"/D/code/c++/pdl-3/BAI4.cpp",
+		"/D/code/c++/pdl-3/BAI3.cpp",
+		"/D/code/c++/pdl-3/BAI2.cpp",
+		"/C/Users/HT/Downloads/test.cpp",
+		"/C/Users/HT/Downloads/allBadges.js",
+		"/D/code/c++/pdl-3/BAI1.cpp",
+		"/D/code/c++/pdl-2/D.cpp",
+		"/D/code/c++/pdl-2/SOCP.cpp",
+		"/D/code/c++/pdl-2/C.cpp",
+		"/D/code/c++/pdl-2/PHATQUA.cpp",
+		"/D/code/c++/pdl-1/TANGKEO.cpp",
+		"/D/code/c++/pdl-1/THOIGIAN.cpp",
+		"/D/code/c++/pdl-1/TONGBOI.cpp",
+		"/D/code/c++/pdl-1/BAI01.cpp",
+		"/D/code/WPlace-AutoBOT/Auto-Image.js"
+	],
+	"find":
+	{
+		"height": 29.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"long long",
+			"int",
+			"long long",
+			"print_sequences",
+			"count_aris",
+			"generate_aris",
+			"hehe",
+			"22112",
+			"generate",
+			"int",
+			"cost",
+			"cand",
+			"cost",
+			"cand",
+			"w",
+			"H",
+			"grid",
+			"int",
+			"long long",
+			"A",
+			"N",
+			"long long",
+			"current_weight",
+			"VMAX",
+			"N",
+			"W",
+			"N",
+			"long long",
+			"int",
+			"tail",
+			"second",
+			"first",
+			"books",
+			"lis",
+			"books",
+			"tails",
+			"used",
+			"current",
+			"best",
+			"score",
+			"best",
+			"maxSum",
+			"mod",
+			"minPrefix",
+			"INF",
+			"maxSum",
+			"prefix",
+			"minPrefix",
+			"long long",
+			"fullRounds",
+			"total",
+			"sumA",
+			"isPrime",
+			"primeCount",
+			"MAXN",
+			"long long",
+			"high",
+			"low",
+			"T",
+			"R",
+			"L",
+			"long long",
+			"ans",
+			"forest",
+			"prefix",
+			"P",
+			"T",
+			"J",
+			"I",
+			"int",
+			"long long",
+			"int"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"ll",
+			"in",
+			"hina",
+			"aris",
+			"tmp",
+			"cnt",
+			"aris",
+			"ll",
+			"t",
+			"b",
+			"t",
+			"c",
+			"w",
+			"h",
+			"n",
+			"a",
+			"ll",
+			"a",
+			"n",
+			"ll",
+			"w1",
+			"vm",
+			"n",
+			"w",
+			"n",
+			"ll",
+			"t",
+			"b",
+			"se",
+			"fi",
+			"a",
+			"d",
+			"a",
+			"d",
+			"vs",
+			"v",
+			"res",
+			"aris",
+			"res",
+			"m",
+			"dp",
+			"INT_MAX",
+			"res",
+			"i",
+			"dp",
+			"ll",
+			"c",
+			"sum",
+			"s",
+			"f",
+			"a",
+			"f",
+			"nmax",
+			"ll",
+			"y",
+			"x",
+			"t",
+			"r",
+			"l",
+			"ll",
+			"res",
+			"a",
+			"dp",
+			"t",
+			"j",
+			"i",
+			"ll"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "D:\\hsg"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "code.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 884,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/D/code/c++/code.cpp",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": ".INP",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16,
+								16
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": ".OUT",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2,
+								2
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 29.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.734130255565,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": false,
+	"output.exec":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"Pcan"
+		]
+	},
+	"output.find_results":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 54.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"D:\\code\\c++\\default.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 147.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
