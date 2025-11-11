@@ -18,25 +18,57 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+
+const int M = 100000 + 7;
+
+void solve()
+{
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	int n;
+	cin >> n;
+
+	vector<int> f(M, 0);
+	int a = 0;
+
+	for (int i = 0; i < n; i++)
+	{
+		int x;
+		cin >> x;
+		f[x]++;
+		a = max(a, x);
+	}
+
+	vector<int> c(a + 1, 0);
+
+	for (int i = 1; i <= a; i++)
+	{
+		for (int j = i; j <= a; j += i)
+		{
+			if (f[j] > 0)
+			{
+				c[i]++;
+			}
+		}
+	}
+
+	int r = 1;
+
+	for (int i = a; i >= 1; i--)
+	{
+		if (c[i] > 1)
+		{
+			r = i;
+			break;
+		}
+	}
+
+	cout << r
+}
 signed main()
 {
 	open("CDIV");
-	int n, res = INT_MIN;
-	cin>>n;
-	vector<int> a(n);
-	for(int i = 0; i < n; i++)
-	{
-		cin>>a[i];
-	}
-	for(int i = 0; i < n; i++)
-	{
-		for(int j = i + 1; j < n; j++)
-		{
-			res = max(res, __gcd(a[i], a[j]));
-		}
-	}
-	cout<<res;
-	
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
+	solve();
 	return 0;
 }

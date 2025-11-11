@@ -8,7 +8,7 @@
 
 using namespace std;
 
-void open(string s)
+void open(st s)
 {
     if(fopen((s + ".INP").c_str(), "r"))
     {
@@ -19,56 +19,31 @@ void open(string s)
     cin.tie(NULL); cout.tie(NULL);
 }
 
-const int M = 100000 + 7;
-
-void solve()
-{
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-
-    int n;
-    cin >> n;
-
-    vector<int> f(M, 0);
-    int a = 0;
-
-    for (int i = 0; i < n; i++)
-    {
-        int x;
-        cin >> x;
-        f[x]++;
-        a = max(a, x);
-    }
-
-    vector<int> c(a + 1, 0);
-
-    for (int i = 1; i <= a; i++)
-    {
-        for (int j = i; j <= a; j += i)
-        {
-            if (f[j] > 0)
-            {
-                c[i]++;
-            }
-        }
-    }
-
-    int r = 1;
-
-    for (int i = a; i >= 1; i--)
-    {
-        if (c[i] > 1)
-        {
-            r = i;
-            break;
-        }
-    }
-
-    cout << r << "\n";
-}
 signed main()
 {
-    open("");
-    solve();
+    open(""); 
+    ll n, k; 
+    cin>>n>>k;
+    vector<ll> a(n), f(n); 
+    for(ll i = 0; i < n; i++)
+    {
+        cin>>a[i];
+    }
+    ll s = 0;
+    for(ll i = 0; i < n; i++)
+    {
+        f[i] = 1;
+        for(ll j = 0; j < i; j++)
+        {
+            if(a[i] - a[j] >= k)
+            {
+                f[i] = max(f[i], f[j] + 1);
+            }
+        }
+        s = max(s, f[i]); 
+    }
+    cout<<s; 
+    
+    cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
     return 0;
 }

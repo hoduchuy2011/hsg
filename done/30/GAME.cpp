@@ -23,26 +23,21 @@ signed main()
 	open("GAME");
 	int n, k;
 	cin>>n>>k;
-	vector<int> a(n + 1);
+	vector<ll> a(n + 1);
 	for(int i = 1; i <= n; i++)
 	{
 		cin>>a[i];
 	}
-	vector<int> b(n + 1, INT_MAX);
-	b[0] = 0;
-	b[1] = a[1];
-	for(int i = 2; i <= k + 1; i++)
+	vector<ll> dp(n + 1, LLONG_MAX);
+	dp[1] = 0;
+	for(int i = 1; i <= n; i++)
 	{
-		b[i] = max(b[i - 1], abs(a[i] - a[1]));
-	}
-	for(int i = k + 2; i <= n + 1; i++)
-	{
-		for(int j = 0; j <= i; j++)
+		for(int j = max(1, i - k); j <= i - 1; j++)
 		{
-			b[i] = min(b[i], abs(a[i] - a[j]) + b[j]);
+			dp[i] = min(dp[i], dp[j] + abs(a[i] - a[j]));
 		}
 	}
-	cout<<b[n];
+	cout<<dp[n];
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
