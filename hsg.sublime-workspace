@@ -35,23 +35,18 @@
 			"file": "code.cpp",
 			"settings":
 			{
-				"buffer_size": 884,
+				"buffer_size": 803,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/D/code/c++/code.cpp",
-			"settings":
-			{
-				"buffer_size": 595,
-				"line_ending": "Windows"
-			}
+			},
+			"undo_stack":
+			[
+			]
 		},
 		{
 			"file": ".INP",
 			"settings":
 			{
-				"buffer_size": 16,
+				"buffer_size": 19,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			},
@@ -63,7 +58,33 @@
 					"paste",
 					null,
 					"AQAAAAAAAAAAAAAAEAAAAAAAAAAmAAAANSAzCiAgMTAgMjUgMzUgNDAgMjAKMCAxMCAxNSAyNSAzMCAyMAo",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAmAAAAAAAAAAAAAAAAAPC/"
+					"BQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAACYAAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAADAAAAAAAAAAQAAAANgoxMiA1IDYgNCA3IDEwCg",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					7,
+					1,
+					"insert",
+					{
+						"characters": "8"
+					},
+					"AQAAAAwAAAAAAAAADQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					11,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAEwAAAAAAAAANAAAANSAyCjQKNQo2CjQKOA",
+					"AQAAAAAAAAABAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		},
@@ -81,8 +102,56 @@
 					1,
 					"revert",
 					null,
-					"BQAAAAAAAAAAAAAAAAAAAAAAAAACAAAAMjAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA",
-					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/"
+					"BgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAMjAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA",
+					"BQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					1,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAACAAAANgoAAAAAAAAAAAEAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					2,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMQAAAAAAAAAAAQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					3,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMgAAAAAAAAAAAQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMgAAAAAAAAAAAQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					5,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMgAAAAAAAAAAAQAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					6,
+					1,
+					"revert",
+					null,
+					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMwAAAAAAAAAAAgAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		}
@@ -199,6 +268,8 @@
 	],
 	"file_history":
 	[
+		"/D/hsg/done/30/GAME.cpp",
+		"/D/hsg/done/30/GIFT.cpp",
 		"/D/code/c++/code.cpp",
 		"/D/hsg/done/30/CDIV.cpp",
 		"/D/code/c++/.OUT",
@@ -324,9 +395,7 @@
 		"/D/code/c++/pdl-2/PHATQUA.cpp",
 		"/D/code/c++/pdl-1/TANGKEO.cpp",
 		"/D/code/c++/pdl-1/THOIGIAN.cpp",
-		"/D/code/c++/pdl-1/TONGBOI.cpp",
-		"/D/code/c++/pdl-1/BAI01.cpp",
-		"/D/code/WPlace-AutoBOT/Auto-Image.js"
+		"/D/code/c++/pdl-1/TONGBOI.cpp"
 	],
 	"find":
 	{
@@ -513,50 +582,19 @@
 				{
 					"buffer": 0,
 					"file": "code.cpp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 884,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								142,
-								142
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"stack_multiselect": false,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/D/code/c++/code.cpp",
 					"selected": true,
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 595,
+						"buffer_size": 803,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								431,
+								431
 							]
 						],
 						"settings":
@@ -566,7 +604,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -579,21 +617,21 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 1,
 					"file": ".INP",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16,
+						"buffer_size": 19,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16,
-								16
+								19,
+								19
 							]
 						],
 						"settings":
@@ -616,7 +654,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": ".OUT",
 					"selected": true,
 					"semi_transient": false,
@@ -629,8 +667,8 @@
 						"selection":
 						[
 							[
-								2,
-								2
+								1,
+								1
 							]
 						],
 						"settings":
