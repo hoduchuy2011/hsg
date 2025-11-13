@@ -37,16 +37,69 @@
 			{
 				"buffer_size": 803,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "#include <bits/stdc++.h>\n#define ll long long\n#define st string\n#define fi first\n#define se second\n#define mod 1000000007\n#define all(x) x.begin(), x.end()\n\nusing namespace std;\n\nvoid open(string s)\n{\n\tif(fopen((s + \".INP\").c_str(), \"r\"))\n\t{\n\t\tfreopen((s + \".INP\").c_str(), \"r\", stdin);\n\t\tfreopen((s + \".OUT\").c_str(), \"w\", stdout);\n\t}\n\tios_base::sync_with_stdio(false);\n\tcin.tie(NULL); cout.tie(NULL);\n}\n\nsigned main()\n{\n\topen(\"\");;\n\n\tll n, x, y;\n\tcin >> n >> x >> y;\n\n\tvector<ll> a(n);\n\tvector<ll> b(n);\n\n\tfor (int i = 0; i < n; ++i) {\n\t\tcin >> a[i];\n\t\tb[i] = abs(a[i]);\n\t}\n\n\tvector<ll> c = a;\n\tsort(c.begin(), c.end());\n\n\tll d = -1;\n\tll u = -1, v = -1;\n\n\tint l = 0;\n\tfor (int r = 0; r < n; ++r) {\n\t\tll q = b[r];\n\t\twhile (l <= r && (r - l + 1 >= y)) {\n\t\t\tll p = b[l];\n\t\t\t\n\t\t\tauto it1 = lower_bound(c.begin(), c.end(), p);\n\t\t\tauto it2 = upper_bound(c.begin(), c.end(), q);\n\t\t\tll k = it2 - it1;\n\n\t\t\tif (k >= x) {\n\t\t\t\tll f = q - p;\n\t\t\t\tif (d == -1 || f < d) {\n\t\t\t\t\td = f;\n\t\t\t\t\tu = p;\n\t\t\t\t\tv = q;\n\t\t\t\t} else if (f == d) {\n\t\t\t\t\tif (p < u) {\n\t\t\t\t\t\tu = p;\n\t\t\t\t\t\tv = q;\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\tl++;\n\t\t\t} else {\n\t\t\t\tl++;\n\t\t\t}\n\t\t}\n\t}\n\n\tif (u == -1) {\n\t\tcout << -1 << \"\\n\";\n\t} else {\n\t\tcout << u << \" \" << v << \"\\n\";\n\t}\n\n\treturn 0;\n}",
+			"file": "tmo.cpp",
+			"file_size": 1673,
+			"file_write_time": 134075037863056496,
+			"settings":
+			{
+				"buffer_size": 1217,
+				"line_ending": "Windows"
 			},
 			"undo_stack":
 			[
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAACwUAAAAAAACsAwAAI2luY2x1ZGUgPGJpdHMvc3RkYysrLmg+CiNkZWZpbmUgbGwgbG9uZyBsb25nCiNkZWZpbmUgc3Qgc3RyaW5nCiNkZWZpbmUgZmkgZmlyc3QKI2RlZmluZSBzZSBzZWNvbmQKI2RlZmluZSBtb2QgMTAwMDAwMDAwNwojZGVmaW5lIGFsbCh4KSB4LmJlZ2luKCksIHguZW5kKCkKCnVzaW5nIG5hbWVzcGFjZSBzdGQ7Cgp2b2lkIG9wZW4oc3QgcykKewogICAgaWYoZm9wZW4oKHMgKyAiLklOUCIpLmNfc3RyKCksICJyIikpCiAgICB7CiAgICAgICAgZnJlb3BlbigocyArICIuSU5QIikuY19zdHIoKSwgInIiLCBzdGRpbik7CiAgICAgICAgZnJlb3BlbigocyArICIuT1VUIikuY19zdHIoKSwgInciLCBzdGRvdXQpOwogICAgfQogICAgaW9zX2Jhc2U6OnN5bmNfd2l0aF9zdGRpbyhmYWxzZSk7CiAgICBjaW4udGllKE5VTEwpOyBjb3V0LnRpZShOVUxMKTsKfQoKc2lnbmVkIG1haW4oKQp7CiAgICBvcGVuKCIiKTsgCiAgICBsbCBuLCBrOyAKICAgIGNpbj4+bj4+azsKICAgIHZlY3RvcjxsbD4gYShuKSwgZihuKTsgCiAgICBmb3IobGwgaSA9IDA7IGkgPCBuOyBpKyspCiAgICB7CiAgICAgICAgY2luPj5hW2ldOwogICAgfQogICAgbGwgcyA9IDA7CiAgICBmb3IobGwgaSA9IDA7IGkgPCBuOyBpKyspCiAgICB7CiAgICAgICAgZltpXSA9IDE7CiAgICAgICAgZm9yKGxsIGogPSAwOyBqIDwgaTsgaisrKQogICAgICAgIHsKICAgICAgICAgICAgaWYoYVtpXSAtIGFbal0gPj0gaykKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgZltpXSA9IG1heChmW2ldLCBmW2pdICsgMSk7CiAgICAgICAgICAgIH0KICAgICAgICB9CiAgICAgICAgcyA9IG1heChzLCBmW2ldKTsgCiAgICB9CiAgICBjb3V0PDxzOyAKICAgIAogICAgY2Vycjw8IlRpbWUgZWxhcHNlZDogIjw8MS4wICogY2xvY2soKSAvIENMT0NLU19QRVJfU0VDPDwiLnNcbiI7CiAgICByZXR1cm4gMDsKfQ",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAKwDAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					7,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAArwEAAAAAAABEAAAAI2luY2x1ZGUgPGJpdHMvc3RkYysrLmg+CgojZGVmaW5lIGxsIGxvbmcgbG9uZwoKdXNpbmcgbmFtZXNwYWNlIHN0ZDs",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAABEAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					10,
+					1,
+					"paste",
+					null,
+					"AQAAALABAAAAAAAAzgEAAAAAAABZAAAACmludCBtYWluKCkgewogICAgaW9zX2Jhc2U6OnN5bmNfd2l0aF9zdGRpbyhmYWxzZSk7CiAgICBjaW4udGllKE5VTEwpOwogICAgY291dC50aWUoTlVMTCk",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAJAgAAAAAAALABAAAAAAAAAAAAAAAA8L8"
+				],
+				[
+					13,
+					1,
+					"unexpand_tabs",
+					{
+						"set_translate_tabs": true
+					},
+					"AQAAAAAAAAAAAAAAwQQAAAAAAAA7BgAAI2luY2x1ZGUgPGJpdHMvc3RkYysrLmg+CiNkZWZpbmUgbGwgbG9uZyBsb25nCiNkZWZpbmUgc3Qgc3RyaW5nCiNkZWZpbmUgZmkgZmlyc3QKI2RlZmluZSBzZSBzZWNvbmQKI2RlZmluZSBtb2QgMTAwMDAwMDAwNwojZGVmaW5lIGFsbCh4KSB4LmJlZ2luKCksIHguZW5kKCkKCnVzaW5nIG5hbWVzcGFjZSBzdGQ7Cgp2b2lkIG9wZW4oc3RyaW5nIHMpCnsKICAgIGlmKGZvcGVuKChzICsgIi5JTlAiKS5jX3N0cigpLCAiciIpKQogICAgewogICAgICAgIGZyZW9wZW4oKHMgKyAiLklOUCIpLmNfc3RyKCksICJyIiwgc3RkaW4pOwogICAgICAgIGZyZW9wZW4oKHMgKyAiLk9VVCIpLmNfc3RyKCksICJ3Iiwgc3Rkb3V0KTsKICAgIH0KICAgIGlvc19iYXNlOjpzeW5jX3dpdGhfc3RkaW8oZmFsc2UpOwogICAgY2luLnRpZShOVUxMKTsgY291dC50aWUoTlVMTCk7Cn0KCnNpZ25lZCBtYWluKCkKewogICAgb3BlbigiIik7OwoKICAgIGxsIG4sIHgsIHk7CiAgICBjaW4gPj4gbiA+PiB4ID4+IHk7CgogICAgdmVjdG9yPGxsPiBhKG4pOwogICAgdmVjdG9yPGxsPiBiKG4pOwoKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgbjsgKytpKSB7CiAgICAgICAgY2luID4+IGFbaV07CiAgICAgICAgYltpXSA9IGFicyhhW2ldKTsKICAgIH0KCiAgICB2ZWN0b3I8bGw+IGMgPSBhOwogICAgc29ydChjLmJlZ2luKCksIGMuZW5kKCkpOwoKICAgIGxsIGQgPSAtMTsKICAgIGxsIHUgPSAtMSwgdiA9IC0xOwoKICAgIGludCBsID0gMDsKICAgIGZvciAoaW50IHIgPSAwOyByIDwgbjsgKytyKSB7CiAgICAgICAgbGwgcSA9IGJbcl07CiAgICAgICAgd2hpbGUgKGwgPD0gciAmJiAociAtIGwgKyAxID49IHkpKSB7CiAgICAgICAgICAgIGxsIHAgPSBiW2xdOwogICAgICAgICAgICAKICAgICAgICAgICAgYXV0byBpdDEgPSBsb3dlcl9ib3VuZChjLmJlZ2luKCksIGMuZW5kKCksIHApOwogICAgICAgICAgICBhdXRvIGl0MiA9IHVwcGVyX2JvdW5kKGMuYmVnaW4oKSwgYy5lbmQoKSwgcSk7CiAgICAgICAgICAgIGxsIGsgPSBpdDIgLSBpdDE7CgogICAgICAgICAgICBpZiAoayA+PSB4KSB7CiAgICAgICAgICAgICAgICBsbCBmID0gcSAtIHA7CiAgICAgICAgICAgICAgICBpZiAoZCA9PSAtMSB8fCBmIDwgZCkgewogICAgICAgICAgICAgICAgICAgIGQgPSBmOwogICAgICAgICAgICAgICAgICAgIHUgPSBwOwogICAgICAgICAgICAgICAgICAgIHYgPSBxOwogICAgICAgICAgICAgICAgfSBlbHNlIGlmIChmID09IGQpIHsKICAgICAgICAgICAgICAgICAgICBpZiAocCA8IHUpIHsKICAgICAgICAgICAgICAgICAgICAgICAgdSA9IHA7CiAgICAgICAgICAgICAgICAgICAgICAgIHYgPSBxOwogICAgICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgICAgIGwrKzsKICAgICAgICAgICAgfSBlbHNlIHsKICAgICAgICAgICAgICAgIGwrKzsKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KCiAgICBpZiAodSA9PSAtMSkgewogICAgICAgIGNvdXQgPDwgLTEgPDwgIlxuIjsKICAgIH0gZWxzZSB7CiAgICAgICAgY291dCA8PCB1IDw8ICIgIiA8PCB2IDw8ICJcbiI7CiAgICB9CgogICAgcmV0dXJuIDA7Cn0",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAACwAQAAAAAAALABAAAAAAAAAAAAAAAA8L8"
+				]
 			]
+		},
+		{
+			"file": "31/khmm.cpp",
+			"settings":
+			{
+				"buffer_size": 1225,
+				"line_ending": "Windows"
+			}
 		},
 		{
 			"file": ".INP",
 			"settings":
 			{
-				"buffer_size": 19,
+				"buffer_size": 16,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			},
@@ -58,7 +111,7 @@
 					"paste",
 					null,
 					"AQAAAAAAAAAAAAAAEAAAAAAAAAAmAAAANSAzCiAgMTAgMjUgMzUgNDAgMjAKMCAxMCAxNSAyNSAzMCAyMAo",
-					"BQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAACYAAAAAAAAAAAAAAAAA8L8"
+					"CAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAACYAAAAAAAAAAAAAAAAA8L8"
 				],
 				[
 					4,
@@ -66,7 +119,7 @@
 					"paste",
 					null,
 					"AQAAAAAAAAAAAAAADAAAAAAAAAAQAAAANgoxMiA1IDYgNCA3IDEwCg",
-					"AQAAAAAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					7,
@@ -76,7 +129,7 @@
 						"characters": "8"
 					},
 					"AQAAAAwAAAAAAAAADQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAADAAAAAAAAAAMAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					11,
@@ -84,7 +137,15 @@
 					"paste",
 					null,
 					"AQAAAAAAAAAAAAAAEwAAAAAAAAANAAAANSAyCjQKNQo2CjQKOA",
-					"AQAAAAAAAAABAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAANAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					4,
+					1,
+					"paste",
+					null,
+					"AQAAAAAAAAAAAAAAEAAAAAAAAAATAAAANSAzCjEwIDI1IDM1IDQwIDIwCg",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAABMAAAAAAAAAAAAAAAAA8L8"
 				]
 			]
 		},
@@ -92,7 +153,7 @@
 			"file": ".OUT",
 			"settings":
 			{
-				"buffer_size": 2,
+				"buffer_size": 4,
 				"line_ending": "Windows"
 			},
 			"undo_stack":
@@ -103,7 +164,7 @@
 					"revert",
 					null,
 					"BgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAMjAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA",
-					"BQAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
+					"CAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8"
 				],
 				[
 					1,
@@ -111,7 +172,7 @@
 					"revert",
 					null,
 					"AgAAAAAAAAAAAAAAAAAAAAAAAAACAAAANgoAAAAAAAAAAAEAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAgAAAAAAAAACAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					2,
@@ -119,7 +180,7 @@
 					"revert",
 					null,
 					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMQAAAAAAAAAAAQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					3,
@@ -127,7 +188,7 @@
 					"revert",
 					null,
 					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMgAAAAAAAAAAAQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					4,
@@ -135,7 +196,7 @@
 					"revert",
 					null,
 					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMgAAAAAAAAAAAQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					5,
@@ -143,15 +204,23 @@
 					"revert",
 					null,
 					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMgAAAAAAAAAAAQAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
 				],
 				[
 					6,
 					1,
 					"revert",
 					null,
-					"AgAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMwAAAAAAAAAAAgAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+					"BAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMwAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA",
+					"BAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8L8AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwvwAAAAABAAAAAQAAAAAAAAABAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					1,
+					1,
+					"revert",
+					null,
+					"AwAAAAAAAAAAAAAAAAAAAAAAAAACAAAAMjAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA",
+					"AgAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPC/AAAAAAEAAAABAAAAAAAAAAEAAAAAAAAAAAAAAAAA8L8"
 				]
 			]
 		}
@@ -582,8 +651,7 @@
 				{
 					"buffer": 0,
 					"file": "code.cpp",
-					"selected": true,
-					"semi_transient": true,
+					"semi_transient": false,
 					"settings":
 					{
 						"buffer_size": 803,
@@ -594,7 +662,7 @@
 						[
 							[
 								431,
-								431
+								404
 							]
 						],
 						"settings":
@@ -604,10 +672,73 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 420.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "tmo.cpp",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1217,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 960.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "31/khmm.cpp",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1225,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 660.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"stack_multiselect": false,
 					"type": "text"
 				}
@@ -617,21 +748,21 @@
 			"sheets":
 			[
 				{
-					"buffer": 1,
+					"buffer": 3,
 					"file": ".INP",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19,
+						"buffer_size": 16,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								19,
-								19
+								16,
+								16
 							]
 						],
 						"settings":
@@ -654,13 +785,13 @@
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": ".OUT",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2,
+						"buffer_size": 4,
 						"regions":
 						{
 						},
