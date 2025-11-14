@@ -20,7 +20,7 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("TROCHOI");
 	int n;
 	cin>>n;
 	vector<int> a(n), b(n);

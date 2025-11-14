@@ -1,28 +1,41 @@
 #include <bits/stdc++.h>
-#include <random>
-#include <ctime>
 #define ll long long
-#define st string
-#define fi first
-#define se second
-#define mod 1000000007
-#define all(x) x.begin(), x.end()
-
 using namespace std;
 
-int main()
-{
-	freopen(".INP", "w", stdout);
-	// Tạo bộ sinh số ngẫu nhiên
-	mt19937_64 rng(time(0));
-	// Sinh n trong [0, 1e6]
-	uniform_int_distribution<char> dist_n('a', 'z');
-	for(int i = 0; i < 200; i++)
-	{
-		char n = dist_n(rng);
-		cout<<n;
-	}
+void aris(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
-	return 0;
+    int n;
+    cin >> n;
+    vector<ll> a(n), b(n);
+
+    for(int i = 0; i < n; i++) cin >> a[i];
+    for(int i = 0; i < n; i++) cin >> b[i];
+
+    sort(b.begin(), b.end());
+
+    ll r = LLONG_MAX;
+
+    for(int i = 0; i < n; i++){
+        ll t = -a[i];
+        int k = lower_bound(b.begin(), b.end(), t) - b.begin();
+
+        if(k < n){
+            ll x = a[i] + b[k];
+            if(x < 0) x = -x;
+            if(x < r) r = x;
+        }
+        if(k > 0){
+            ll x = a[i] + b[k-1];
+            if(x < 0) x = -x;
+            if(x < r) r = x;
+        }
+    }
+
+    cout << r;
+}
+
+int main(){
+    aris();
 }

@@ -18,42 +18,47 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+const int nmax = 1e6+5;
+vector<bool> f(nmax, 1);
+void sang()
+{
+	f[0] = f[1] = 0;
+	for(int i = 2; i * i <= nmax; i++)
+	{
+		if(f[i])
+		{
+			for(int j = i*i; j <= nmax; j += i)
+			{
+				f[j] = 0;
+			}
+		}
+	}
+}
+int tcs(int n)
+{
+	int s = 0;
+	while(n > 0)
+	{
+		s += n % 10;
+		n /= 10;
+	}
+	return s;
+}
 signed main()
 {
-	open("");
-	int n;
-	cin>>n;
-	vector<int> a(n), b(n);
-	for(int i = 0; i < n; i++)
+	open("DOCAO ");
+	sang();
+	int n, h, res = 0;
+	cin>>n>>h;
+	for(int i = 0; i <= n; i++)
 	{
-		cin>>a[i];
-	}
-	for(int i = 0; i < n; i++)
-	{
-		cin>>b[i];
-	}
-	sort(all(a));
-	sort(all(b));
-	int i = 0, j = n - 1;
-	int r = INT_MAX;
-	while(i < n && j >= 0)
-	{
-		int s = a[i] + b[j];
-		r = min(r, abs(s));
-		if(s == 0)
+		if(f[i] && tcs(i) == h)
 		{
-			break;
-		}
-		else if(s > 0)
-		{
-			j--;
-		}
-		else
-		{
-			i++;
+			cout<<i<<"\n";
+			res++;
 		}
 	}
-	cout<<r;
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
