@@ -20,7 +20,7 @@ void open(string s)
 }
 int main()
 {
-	open("");
+	open("DIENTICH");
 	//A(int(R*cos(45));int(R*sin(45)))
 	ll r;
     cin >> r;

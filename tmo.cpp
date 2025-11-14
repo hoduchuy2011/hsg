@@ -18,68 +18,25 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-signed main()
+int main()
 {
 	open("");
-
-    int n, x, y;
-    if (!(cin >> n >> x >> y))
+	//A(int(R*cos(45));int(R*sin(45)))
+	ll r;
+    cin >> r;
+    ll a = 0;
+    ll rr = r * r;
+    for (ll x = 1; x < r; ++x) 
     {
-        return 0;
-    }
-    vector<int> b(n);
-    vector<int> s(n);
-    for (int i = 0; i < n; ++i)
-    {
-        int v;
-        cin >> v;
-        b[i] = abs(v);
-        s[i] = (v > 0) ? 1 : -1;
-    }
-
-    int l = 0;
-    int p = 0, g = 0;
-    int k = -1, m = -1;
-    int w = INT_MAX;
-
-    for (int r = 0; r < n; ++r)
-    {
-        if (s[r] == 1)
+        ll yy = rr - x * x;
+        ll y = sqrt(yy);
+        if (y >= 1) 
         {
-            ++p;
-        }
-        else
-        {
-            ++g;
-        }
-        while (l <= r && p >= x && g >= y)
-        {
-            int t = b[r] - b[l];
-            if (t < w || (t == w && (k == -1 || b[l] < b[k])))
-            {
-                w = t;
-                k = l;
-                m = r;
-            }
-            if (s[l] == 1)
-            {
-                --p;
-            }
-            else
-            {
-                --g;
-            }
-            ++l;
+            a = max(a, 4 * x * y);
         }
     }
+    cout << a;
 
-    if (k == -1)
-    {
-        cout << -1 << '\n';
-    }
-    else
-    {
-        cout << b[k] << ' ' << b[m] << '\n';
-    }
-    return 0;
+	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
+	return 0;
 }

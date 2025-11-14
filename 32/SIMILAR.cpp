@@ -18,25 +18,35 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-int main()
+signed main()
 {
-	open("");
-	//A(int(R*cos(45));int(R*sin(45)))
-	ll r;
-    cin >> r;
-    ll a = 0;
-    ll rr = r * r;
-    for (ll x = 1; x < r; ++x) 
-    {
-        ll yy = rr - x * x;
-        ll y = sqrt(yy);
-        if (y >= 1) 
-        {
-            a = max(a, 4 * x * y);
-        }
-    }
-    cout << a;
+	open("SIMILAR");
+	cin >> l >> r;
+	const int m = 63; 
+	vector<int> a(m + 1, -1);
+	vector<int> b(m + 1, -1);
+	int d = 0;
+	for (int i = l; i <= r; ++i)
+	{
+		int s = f(i);
 
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
+		if (a[s] == -1)
+		{
+			a[s] = i;
+		}
+		b[s] = i; 
+	}
+	for (int s = 1; s <= m; ++s)
+	{
+		if (a[s] != -1)
+		{
+			int c = b[s] - a[s];
+			if (c > d)
+			{
+				d = c;
+			}
+		}
+	}
+	cout << d << '\n';
 	return 0;
 }

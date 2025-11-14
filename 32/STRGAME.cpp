@@ -3,7 +3,6 @@
 #define st string
 #define fi first
 #define se second
-#define mod 1000000007
 #define all(x) x.begin(), x.end()
 
 using namespace std;
@@ -18,24 +17,30 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-int main()
+int main() 
 {
-	open("");
-	//A(int(R*cos(45));int(R*sin(45)))
-	ll r;
-    cin >> r;
-    ll a = 0;
-    ll rr = r * r;
-    for (ll x = 1; x < r; ++x) 
-    {
-        ll yy = rr - x * x;
-        ll y = sqrt(yy);
-        if (y >= 1) 
-        {
-            a = max(a, 4 * x * y);
-        }
-    }
-    cout << a;
+	open("STRGAME");
+	int n, k, m;
+	cin>>n>>k;
+	string s;
+	cin>>s;
+	sort(s.begin(), s.end());
+	if(s[0] == s[k - 1])
+	{
+		if(s[k] == s[n - 1])
+		{
+			m = (n + k - 1) / k;
+		}
+		else
+		{
+			m = n - k - 1;
+		}
+	}
+	else
+	{
+		m = 1;
+	}
+	cout<<s.substr(k-1, m);
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
