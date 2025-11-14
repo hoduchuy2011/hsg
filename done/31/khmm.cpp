@@ -21,61 +21,49 @@ void open(string s)
 signed main()
 {
 	open("khmm");
-	int n, x, y;
-	cin >> n >> x >> y
-	vector<int> b(n);
-	vector<int> s(n);
-	for (int i = 0; i < n; ++i)
+	int n, x, y, c, l = INT_MAX, r = INT_MIN;
+	cin>>n>>x>>y;
+	map<int, int> t, a;
+	vector<int> d(1000006);
+	for(int i = 0; i < n; i++)
 	{
-		int v;
-		cin >> v;
-		b[i] = abs(v);
-		s[i] = (v > 0) ? 1 : -1;
+		cin>>c;
+		l = min(l, c);
+		r = max(r, c);
+		t[c]++;
+		d[i] = c;
 	}
-
-	int l = 0;
-	int p = 0, g = 0;
-	int k = -1, m = -1;
-	int w = INT_MAX;
-
-	for (int r = 0; r < n; ++r)
+	a[l - 1] = 0;
+	a[l] = t[l];
+	int dif = INT_MAX;
+	for(int i = l + 1; i <= r; i++)
 	{
-		if (s[r] == 1)
+		a[i] = a[i - 1] + t[i];
+	}
+	pair<int, int> res;
+	for(int i = 0; i <= r; i++)
+	{
+		for(int j = i + 1; j <= r; j++)
 		{
-			++p;
-		}
-		else
-		{
-			++g;
-		}
-		while (l <= r && p >= x && g >= y)
-		{
-			int t = b[r] - b[l];
-			if (t < w || (t == w && (k == -1 || b[l] < b[k])))
+			if(a[j] - a[i - 1] == x && a[-1 * i] - a[-1 * j - 1] == y)
 			{
-				w = t;
-				k = l;
-				m = r;
+				if(abs(i - j) < dif)
+				{
+					res = make_pair(i, j);
+					dif = abs(i - j);
+				}
+				else if(abs(i - j) == dif)
+				{
+					if(i < res.fi)
+					{
+						res = make_pair(i, j);
+					}
+				}
 			}
-			if (s[l] == 1)
-			{
-				--p;
-			}
-			else
-			{
-				--g;
-			}
-			++l;
 		}
 	}
+	cout<<res.fi<<" "<<res.se;
 
-	if (k == -1)
-	{
-		cout << -1 << '\n';
-	}
-	else
-	{
-		cout << b[k] << ' ' << b[m] << '\n';
-	}
+	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }
