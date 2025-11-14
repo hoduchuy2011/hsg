@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <random>
+#include <ctime>
 #define ll long long
 #define st string
 #define fi first
@@ -8,34 +10,18 @@
 
 using namespace std;
 
-void open(string s)
-{
-	if(fopen((s + ".INP").c_str(), "r"))
-	{
-		freopen((s + ".INP").c_str(), "r", stdin);
-		freopen((s + ".OUT").c_str(), "w", stdout);
-	}
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
-}
 int main()
 {
-	open("");
-	//A(int(R*cos(45));int(R*sin(45)))
-	ll r;
-    cin >> r;
-    ll a = 0;
-    ll rr = r * r;
-    for (ll x = 1; x < r; ++x) 
-    {
-        ll yy = rr - x * x;
-        ll y = sqrt(yy);
-        if (y >= 1) 
-        {
-            a = max(a, 4 * x * y);
-        }
-    }
-    cout << a;
+	freopen(".INP", "w", stdout);
+	// Tạo bộ sinh số ngẫu nhiên
+	mt19937_64 rng(time(0));
+	// Sinh n trong [0, 1e6]
+	uniform_int_distribution<char> dist_n('a', 'z');
+	for(int i = 0; i < 200; i++)
+	{
+		char n = dist_n(rng);
+		cout<<n;
+	}
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

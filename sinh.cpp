@@ -25,7 +25,7 @@ int main() {
 	fout << n << "\n";
 
 	// Sinh n số trong [0, 1e9]
-	uniform_int_distribution<long long> dist_val(0, 1e6);
+	uniform_int_distribution<long long> dist_val(0, 1e18);
 	for (int i = 0; i < n; ++i) {
 		fout << dist_val(rng);
 		if (i != n - 1) fout << " ";

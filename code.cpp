@@ -18,24 +18,17 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-int main()
+signed main()
 {
 	open("");
-	//A(int(R*cos(45));int(R*sin(45)))
-	ll r;
-    cin >> r;
-    ll a = 0;
-    ll rr = r * r;
-    for (ll x = 1; x < r; ++x) 
-    {
-        ll yy = rr - x * x;
-        ll y = sqrt(yy);
-        if (y >= 1) 
-        {
-            a = max(a, 4 * x * y);
-        }
-    }
-    cout << a;
+	string s;
+	ll m, res = 0;
+	cin>>s>>m;
+	for(int i = s.size() - 1; i > s.size() - m - 1; i--)
+	{
+		res += (s[i] - '0');
+	}
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
