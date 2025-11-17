@@ -42,7 +42,7 @@ ll c(ll x, ll y)
 
 int main()
 {
-	open("");
+	open("xoso");
 	cin >> n >> k;
 	a.resize(n);
 	d.resize(n + 1, vector<ll>(k + 1, -1));
@@ -57,7 +57,7 @@ int main()
 		ll b = c(i, k - 1);
 		s = (s + (a[i] * b) % m) % m;
 	}
-	cout << s << endl;
+	cout<<s;
 
 	return 0;
 }

@@ -20,18 +20,36 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	ll n, k, res = 0;
-	cin>>n>>k;
-	vector<int> a(n);
-	for(auto &i : a)
+	open("matma");
+	ll n, m, k, x;
+	cin>>n>>m>>k>>x;
+	string s;
+	cin>>s;
+	vector<string> v(m);
+	for(auto &i : v)
 	{
 		cin>>i;
+		sort(all(i));
 	}
-	sort(all(a));
-	for(int i = 0; i < n; i++)
+	x--;
+	vector<char> r(m);
+	for (int i = m - 1; i >= 0; --i)
 	{
-		
+		r[i] = v[i][x % k];
+		x /= k;
+	}
+	int j = 0;
+	for(auto i : s)
+	{
+		if(i == '#')
+		{
+			cout<<r[j];
+			j++;
+		}
+		else
+		{
+			cout<<i;
+		}
 	}
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";

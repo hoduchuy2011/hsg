@@ -20,18 +20,27 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	ll n, k, res = 0;
-	cin>>n>>k;
-	vector<int> a(n);
+	open("avr");
+	ll n;
+	cin>>n;
+	vector<ll> a(n);
 	for(auto &i : a)
 	{
 		cin>>i;
 	}
-	sort(all(a));
-	for(int i = 0; i < n; i++)
+	vector<ll> b;
+	ll t = a[0], x;
+	b.push_back(a[0]);
+	for(int i = 1; i < n; i++)
 	{
-		
+		x = a[i] * (i + 1);
+		x -= t;
+		b.push_back(x);
+		t += x;
+	}
+	for(auto i : b)
+	{
+		cout<<i<<" ";
 	}
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
