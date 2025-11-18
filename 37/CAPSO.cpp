@@ -18,37 +18,25 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-bool cmp(pair<int, int> a, pair<int, int> b)
-{
-	return a.se - a.fi < b.se - b.fi;
-}
 signed main()
 {
-	open("");
-	int n, m;
-	cin>>n>>m;
-	vector<pair<int, int>> a(n);
+	open("CAPSO");
+	int n, s;
+	cin>>n>>s;
+	vector<int> a(n);
+	map<int, int> m;
 	for(int i = 0; i < n; i++)
 	{
-		cin>>a[i].fi;
+		cin>>a[i];
+		m[a[i]]++;
 	}
+	int res = 0;
 	for(int i = 0; i < n; i++)
 	{
-		cin>>a[i].se;
+		m[a[i]]--;
+		res += m[s - a[i]];
 	}
-	sort(all(a), cmp);
-	for(auto i : a)
-	{
-		if(m >= i.se - i.fi)
-		{
-			m += i.fi;
-		}
-		else
-		{
-			break;
-		}
-	}
-	cout<<m;
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

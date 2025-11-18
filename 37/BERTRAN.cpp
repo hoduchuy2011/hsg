@@ -18,37 +18,37 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-bool cmp(pair<int, int> a, pair<int, int> b)
+const int nmax = 2e6+5;
+vector<bool> f(nmax, 1);
+void sang()
 {
-	return a.se - a.fi < b.se - b.fi;
+	f[0] = f[1] = 0;
+	for(int i = 2; i * i <= nmax; i++)
+	{
+		if(f[i])
+		{
+			for(int j = i*i; j <= nmax; j += i)
+			{
+				f[j] = 0;
+			}
+		}
+	}
 }
 signed main()
 {
-	open("");
-	int n, m;
-	cin>>n>>m;
-	vector<pair<int, int>> a(n);
-	for(int i = 0; i < n; i++)
+	open("BERTRAN");
+	sang();
+	int p, res = 0;
+	cin>>p;
+	for(int i = p + 1; i < 2 * p; i++)
 	{
-		cin>>a[i].fi;
-	}
-	for(int i = 0; i < n; i++)
-	{
-		cin>>a[i].se;
-	}
-	sort(all(a), cmp);
-	for(auto i : a)
-	{
-		if(m >= i.se - i.fi)
+		if(f[i])
 		{
-			m += i.fi;
-		}
-		else
-		{
-			break;
+			cout<<i<<" ";
+			res++;
 		}
 	}
-	cout<<m;
+	cout<<"\n"<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

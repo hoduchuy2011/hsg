@@ -24,7 +24,7 @@ bool cmp(pair<int, int> a, pair<int, int> b)
 }
 signed main()
 {
-	open("");
+	open("COINS");
 	int n, m;
 	cin>>n>>m;
 	vector<pair<int, int>> a(n);
