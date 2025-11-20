@@ -20,7 +20,7 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("CAU4");
 	int n, m, k;
 	cin>>m>>n>>k;
 	vector<vector<int>> a(m, vector<int>(n));
