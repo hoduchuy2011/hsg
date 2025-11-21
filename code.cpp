@@ -21,77 +21,56 @@ void open(string s)
 signed main()
 {
 	open("");
-	int n, m, k;
-	cin>>m>>n>>k;
-	vector<vector<int>> a(m, vector<int>(n));
-	for(int i = 0; i < m; i++)
+	int n;
+	cin>>n;
+	vector<string> a(n);
+	for(auto &i : a)
 	{
-		for(int j = 0; j < n; j++)
+		cin>>i;
+	}
+	string s;
+	cin>>s;
+	vector<bool> f(s.size(), 0);
+	for(auto k : a)
+	{
+		for(int i = 0; i < k.size(); i++)
 		{
-			cin>>a[i][j];
+			if(k[i] == s[i])
+			{
+				f[i] = 1;
+			}
 		}
 	}
-	vector<vector<bool>> f(m, vector<bool>(n, false));
-	for (int i = 0; i < m; ++i) 
+	bool t = 1;
+	for(auto i : f)
 	{
-		for (int j = 0; j < n; ) 
+		if(i == 0)
 		{
-			if (a[i][j] == 0) 
+			t = 0;
+			break;
+		}
+	}
+	if(!t)
+	{
+		cout<<-1;
+	}
+	else
+	{
+		int x = -1;
+		for(auto k : a)
+		{
+			int r = 0;
+			for(int i = 0; i < k.size(); i++)
 			{
-				j++;
-				continue;
-			}
-			int ptr = j;
-			while (ptr < n && a[i][ptr] == a[i][j]) 
-			{
-				ptr++;
-			}
-			if (ptr - j >= k) 
-			{
-				for (int p = j; p < ptr; ++p) 
+				if(k[i] == s[i])
 				{
-					f[i][p] = true;
+					r++;
 				}
 			}
-			j = ptr;
+			x = max(x, r);
 		}
+		cout<<s.size() - x;
 	}
-	for (int j = 0; j < n; ++j) 
-	{
-		for (int i = 0; i < m; ) 
-		{
-			if (a[i][j] == 0) 
-			{
-				i++;
-				continue;
-			}
-			int ptr = i;
-			while (ptr < m && a[ptr][j] == a[i][j]) 
-			{
-				ptr++;
-			}
-			if (ptr - i >= k) 
-			{
-				for (int p = i; p < ptr; ++p) 
-				{
-					f[p][j] = true;
-				}
-			}
-			i = ptr;
-		}
-	}
-	int res = 0;
-	for(int i = 0; i < m; i++)
-	{
-		for(int j = 0; j < n; j++)
-		{
-			if(a[i][j] != 0 && f[i][j] == 0)
-			{
-				res++;
-			}
-		}
-	}
-	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
