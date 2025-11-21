@@ -21,7 +21,7 @@ void open(string s)
 int v[5005]; 
 signed main() 
 {
-	open("");
+	open("VOTE");
 	int n;
 	cin>>n;
 	char c;
