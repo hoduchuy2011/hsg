@@ -19,7 +19,7 @@ void open(string s)
 signed main()
 {
 	open("");
-	ll a, b, c, d;// a/b + c/d
+	ll a, b, c, d;// a/b - c/d
 	cin>>a>>b>>c>>d;
 	ll g = __gcd(b, d);
 	g = (b * d) / g;
