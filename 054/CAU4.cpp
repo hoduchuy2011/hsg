@@ -20,7 +20,7 @@ void open(string s)
 }
 signed main()
 {
-	open("");
+	open("CAU4");
 	int n, x, y, c, l = INT_MAX, r = INT_MIN;
 	cin>>n>>x>>y;
 	map<int, int> t, a;
