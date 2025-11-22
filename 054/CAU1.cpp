@@ -18,7 +18,7 @@ void open(string s)
 }
 signed main()
 {
-	open("CAU1");
+	open("");
 	ll a, b, c, d;// a/b + c/d
 	cin>>a>>b>>c>>d;
 	ll g = __gcd(b, d);
@@ -28,7 +28,8 @@ signed main()
 	//res: x / y
 	ll x = a - c;
 	ll y = g;
-	cout<<x<<" "<<y;
+	ll t = __gcd(x, y);
+	cout<<x/t<<" "<<y/t;
 
 	cerr<<"Time elapsed: "<<1.000 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
