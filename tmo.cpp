@@ -18,46 +18,52 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-int v[5005]; 
-signed main() 
+signed main()
 {
 	open("");
-	int n;
-	cin>>n;
-	char c;
-	for (int i = 1; i <= n; ++i) 
+	int n, x, y, c, l = INT_MAX, r = INT_MIN;
+	cin>>n>>x>>y;
+	map<int, int> t, a;
+	vector<int> d(1000006);
+	for(int i = 0; i < n; i++)
 	{
-		for (int j = 1; j <= n; ++j) 
+		cin>>c;
+		l = min(l, c);
+		r = max(r, c);
+		t[c]++;
+		d[i] = c;
+	}
+	a[l - 1] = 0;
+	a[l] = t[l];
+	int dif = INT_MAX;
+	for(int i = l + 1; i <= r; i++)
+	{
+		a[i] = a[i - 1] + t[i];
+	}
+	pair<int, int> res;
+	for(int i = 0; i <= r; i++)
+	{
+		for(int j = i + 1; j <= r; j++)
 		{
-			cin >> c;
-			if (c == 'X') 
+			if(a[j] - a[i - 1] == x && a[-1 * i] - a[-1 * j - 1] == y)
 			{
-				v[j]++;
+				if(abs(i - j) < dif)
+				{
+					res = make_pair(i, j);
+					dif = abs(i - j);
+				}
+				else if(abs(i - j) == dif)
+				{
+					if(i < res.fi)
+					{
+						res = make_pair(i, j);
+					}
+				}
 			}
 		}
 	}
-	int mx = -1;
-	for (int i = 1; i <= n; ++i) 
-	{
-		if (v[i] > mx) 
-		{
-			mx = v[i];
-		}
-	}
-	vector<int> w;
-	for (int i = 1; i <= n; ++i) 
-	{
-		if (v[i] == mx) 
-		{
-			w.push_back(i);
-		}
-	}
-	cout << w.size() << " " << mx << "\n";
-	for (size_t i = 0; i < w.size(); ++i) 
-	{
-		cout << w[i] << (i == w.size() - 1 ? "" : " ");
-	}
-	cout << "\n";
+	cout<<res.fi<<" "<<res.se;
 
+	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }
