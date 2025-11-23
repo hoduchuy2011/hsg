@@ -10,7 +10,7 @@ using namespace std;
 
 void open(string s)
 {
-	if(fopen((s + ".INP").c_str(), "r"))
+	if (fopen((s + ".INP").c_str(), "r"))
 	{
 		freopen((s + ".INP").c_str(), "r", stdin);
 		freopen((s + ".OUT").c_str(), "w", stdout);
@@ -18,61 +18,57 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+
+void solve()
+{
+	int n, m;
+	if (!(cin >> n >> m)) return;
+
+	vector<string> a(n);
+	for (int i = 0; i < n; i++)
+	{
+		cin >> a[i];
+	}
+
+	vector<string> b(m);
+	for (int j = 0; j < m; j++)
+	{
+		b[j].resize(n);
+		for (int i = 0; i < n; i++)
+		{
+			b[j][n - 1 - i] = a[i][j];
+		}
+	}
+
+	sort(b.begin(), b.end());
+
+	int x = 0;
+	for (int i = 0; i < m - 1; i++)
+	{
+		int c = 0;
+		int l = b[i].length();
+		for (int j = 0; j < l; j++)
+		{
+			if (b[i][j] == b[i + 1][j])
+			{
+				c++;
+			}
+			else
+			{
+				break;
+			}
+		}
+		if (c > x) x = c;
+	}
+
+	cout << n - 1 - x;
+}
+
 signed main()
 {
 	open("");
-	int n, x, y, c, l = INT_MAX, r = INT_MIN;
-	cin>>n>>x>>y;
-	map<int, int> t, a;
-	vector<int> d(1000006);
-	for(int i = 0; i < n; i++)
-	{
-		cin>>c;
-		l = min(l, c);
-		r = max(r, c);
-		t[c]++;
-		d[i] = c;
-	}
-	a[l - 1] = 0;
-	a[l] = t[l];
-	int dif = INT_MAX;
-	for(int i = l + 1; i <= r; i++)
-	{
-		a[i] = a[i - 1] + t[i];
-	}
-	bool f = 0;
-	pair<int, int> res;
-	for(int i = 0; i <= r; i++)
-	{
-		for(int j = i + 1; j <= r; j++)
-		{
-			if(a[j] - a[i - 1] == x && a[-1 * i] - a[-1 * j - 1] == y)
-			{
-				if(abs(i - j) < dif)
-				{
-					res = make_pair(i, j);
-					dif = abs(i - j);
-					f = 1;
-				}
-				else if(abs(i - j) == dif)
-				{
-					if(i < res.fi)
-					{
-						res = make_pair(i, j);
-					}
-				}
-			}
-		}
-	}
-	if(!f)
-	{
-		cout<<-1;
-	}
-	else
-	{
-		cout<<res.fi<<" "<<res.se;
-	}
-
+	solve();
+	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }
