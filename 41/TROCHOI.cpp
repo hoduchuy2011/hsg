@@ -20,26 +20,40 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	ll n, k, p, q, m, c;
-	cin>>n>>k>>p>>q>>m;
-	ll t = t = n * (n + 1) * k / 2;
-	vector<ll> a;
-	for(ll i = 1; i <= n; i++)
+	open("TROCHOI");
+	int n;
+	cin>>n;
+	vector<int> a(n), b(n);
+	for(auto &i : a)
 	{
-		c = (p * i) % m +q;
-		a.push_back(c);
-		t += a[i - 1];
+		cin>>i;
 	}
-	ll res = INT_MAX;
-	for(int i = 0; i < n; i++)
+	for(auto &i : b)
 	{
-		ll tmp = INT_MIN;
-		for(int j = 1; j <= n; j++)
+		cin>>i;
+	}
+	sort(all(b));
+	ll res = -1;
+	for(auto &i : a)
+	{
+		auto it = lower_bound(b.begin(), b.end(), i);
+		if (it != b.end()) 
 		{
-			tmp = max(tmp, a[j] + k * j);
+			ll tmp = abs(i + *it);
+			if (res == -1 || tmp < res) 
+			{
+				res = tmp;
+			}
 		}
-		res = min(res, tmp);
+		if (it != b.begin()) 
+		{
+			it--; 
+			ll tmp = abs(i + *it);
+			if (res == -1 || tmp < res) 
+			{
+				res = tmp;
+			}
+		}
 	}
 	cout<<res;
 	

@@ -29,7 +29,7 @@ signed main()
 	ll x = a - c;
 	ll y = g;
 	ll t = __gcd(x, y);
-	if(x * y < 0)
+	if(abs(x) != x && abs(y) != y)
 	{
 		x = abs(x);
 		y = -1 * abs(y);
