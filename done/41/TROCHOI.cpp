@@ -21,41 +21,40 @@ void open(string s)
 signed main()
 {
 	open("TROCHOI");
-	int n;
+	ll n;
 	cin>>n;
-	vector<int> a(n), b(n);
-	for(auto &i : a)
+	vector<ll> b(n);
+	vector<ll> c(n);
+	for (ll i = 0; i < n; i++)
 	{
-		cin>>i;
+		cin >> b[i];
 	}
-	for(auto &i : b)
+	for (ll i = 0; i < n; i++)
 	{
-		cin>>i;
+		cin >> c[i];
 	}
-	sort(all(b));
-	ll res = -1;
-	for(auto &i : a)
+	sort(c.begin(), c.end());
+	ll r = -1;
+	for (ll i = 0; i < n; i++)
 	{
-		auto it = lower_bound(b.begin(), b.end(), i);
-		if (it != b.end()) 
+		ll x = -b[i];
+		auto k = lower_bound(c.begin(), c.end(), x);
+
+		if (k != c.end())
 		{
-			ll tmp = abs(i + *it);
-			if (res == -1 || tmp < res) 
-			{
-				res = tmp;
-			}
+			ll v = abs(b[i] + *k);
+			if (r == -1 || v < r) r = v;
 		}
-		if (it != b.begin()) 
+
+		if (k != c.begin())
 		{
-			it--; 
-			ll tmp = abs(i + *it);
-			if (res == -1 || tmp < res) 
-			{
-				res = tmp;
-			}
+			k--;
+			ll v = abs(b[i] + *k);
+			if (r == -1 || v < r) r = v;
 		}
 	}
-	cout<<res;
+
+	cout << r;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
