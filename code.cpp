@@ -18,31 +18,7 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-void sub1()
-{
-	ll n, k, p, q, m, c;
-	cin>>n>>k>>p>>q>>m;
-	ll t = t = n * (n + 1) * k / 2;
-	vector<ll> a;
-	for(ll i = 1; i <= n; i++)
-	{
-		c = (p * i) % m +q;
-		a.push_back(c);
-		t += a[i - 1];
-	}
-	ll res = INT_MAX;
-	for(int i = 0; i < n; i++)
-	{
-		ll tmp = INT_MIN;
-		for(int j = 1; j <= n; j++)
-		{
-			tmp = max(tmp, a[j] + k * j);
-		}
-		res = min(res, tmp);
-	}
-	cout<<res;
-}
-void sub2()
+void solve()
 {
 	ll n, d;
 	cin>>n>>d;
@@ -77,7 +53,7 @@ void sub2()
 signed main()
 {
 	open("");
-	sub2();
+	solve();
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
