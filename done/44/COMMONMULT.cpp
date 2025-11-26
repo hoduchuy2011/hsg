@@ -18,16 +18,26 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+ll lcm(ll a, ll b)
+{
+	return a / (__gcd(a, b)) * b;
+}
 signed main()
 {
 	open("COMMONMULT");
 	ll n, a, b, c;
 	cin>>n>>a>>b>>c;
-	ll g = a * b / __gcd(a, b);
-	g = g * c / __gcd(g, c);
-	for(int i = g; i <= n; i += g)
+	ll lc = lcm(a, lcm(b, c));
+	if (lc > n) 
 	{
-		cout<<i<<' ';
+		cout << -1;
+	} 
+	else 
+	{
+		for (ll i = lc; i <= n; i += lc) 
+		{
+			cout << i << " ";
+		}
 	}
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";

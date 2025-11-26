@@ -18,28 +18,39 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-signed main()
+
+int main() 
 {
 	open("");
-	long long n, ans = 0;
-	cin>>n;
-	for(int i = 2; i * i <= n; i++)
-	{
-		if(n % i == 0)
-		{
-			ans++;
-			while(n % i == 0)
-			{
-				n /= i;
-			}
-		}
-	}
-	if(n != 1)
-	{
-		ans++;
-	}
-	cout<<ans;
-	
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
-	return 0;
+    int N;
+    ll K;
+    cin>>N>>K;
+    vector<ll> a(N);
+    for (int i = 0; i < N; ++i) 
+    {
+        cin >> a[i];
+    }
+    sort(a.begin(), a.end());
+    ll res = 0;
+    multiset<ll> s;
+    for (int i = N - 1; i >= 0; --i) 
+    {
+        ll tmp = a[i];
+        ll x = tmp + K;
+        auto it = s.lower_bound(x);
+
+        if (it != s.end()) 
+        {
+            s.erase(it);
+            s.insert(tmp);
+        } 
+        else 
+        {
+            res += tmp;
+            s.insert(tmp);
+        }
+    }
+    cout << res;
+
+    return 0;
 }

@@ -18,30 +18,45 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+const int nmax = 1e6+5;
+vector<bool> f(nmax, 1);
+void sang()
+{
+	f[0] = f[1] = 0;
+	for(int i = 2; i*i < nmax; i++)
+	{
+		if(f[i])
+		{
+			for(int j = i*i; j < nmax; j += i)
+			{
+				f[j] = 0;
+			}
+		}
+	}
+}
+bool dx(ll n)
+{
+	string s = to_string(n);
+	string t = s;
+	reverse(all(t));
+	return t == s;
+}
 signed main()
 {
 	open("");
-	int n, k, res = 0;
-	cin>>n>>k;
-	vector<int> a(n);
-	for(auto &i : a)
+	sang();
+	ll a, b, res = 0;
+	cin>>a>>b;
+	ll c = sqrt(a), d = sqrt(b);
+	if(c * c < a)
 	{
-		cin>>i;
+		c++;
 	}
-	multiset<int> s;
-	sort(all(a), greater<int>());
-	for(int i : a)
+	for(ll i = c; i <= d; i++)
 	{
-		auto it = s.lower_bound(i + k);
-		if(it != s.end())
+		if(f[i] && dx(i * i))
 		{
-			s.erase(it);
-			s.insert(i);
-		}
-		else
-		{
-			res += i;
-			s.insert(i);
+			res++;
 		}
 	}
 	cout<<res;

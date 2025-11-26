@@ -23,11 +23,11 @@ vector<bool> f(nmax, 1);
 void sang()
 {
 	f[0] = f[1] = 0;
-	for(int i = 2; i*i <= nmax; i++)
+	for(int i = 2; i*i < nmax; i++)
 	{
 		if(f[i])
 		{
-			for(int j = i*i; j <= nmax; j += i)
+			for(int j = i*i; j < nmax; j += i)
 			{
 				f[j] = 0;
 			}
