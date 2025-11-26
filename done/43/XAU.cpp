@@ -18,40 +18,41 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-const int nmax = 1e6 + 7;
-vector<bool> f(nmax, 1);
-vector<int> a;
-void sang()
-{
-	f[0] = f[1] = 0;
-	for(int i = 2; i*i <= nmax; i++)
-	{
-		if(f[i])
-		{
-			for(int j = i*i; j <= nmax; j += i)
-			{
-				f[j] = 0;
-			}
-		}
-	}
-	for(int i = 2; i <= nmax; i++)
-	{
-		if(f[i])
-		{
-			a.push_back(i);
-		}
-	}
-}
 signed main()
 {
-	open("");
-	sang();
-	int n;
-	cin>>n;
-	for(int i = 0; i < n; i++)
+	open("XAU");
+	string a, b;
+	cin>>a>>b;
+	vector<int> t(123, 0), r(123, 0);
+	for(auto i : a)
 	{
-		cout<<a[i];
+		t[i]++;
 	}
+	int c = a.size(), d = b.size(), res = 0;
+	string s = b.substr(0, c - 1);
+	s = "#" + s;
+	for(auto i : s)
+	{
+		r[(int)i]++;
+	}
+	for(int i = 0; i <= d - c; i++)
+	{
+		bool f = 1;
+		r[(int)s[0]]--;
+		s = s.substr(1, c - 1);
+		s += b[i + c - 1];
+		r[(int)s[c - 1]]++;
+		for(int i = 'a'; i <= 'z'; i++)
+		{
+			if(r[i] != t[i])
+			{
+				f = 0;
+				break;
+			}
+		}
+		res += f;
+	}
+	cout<<res;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

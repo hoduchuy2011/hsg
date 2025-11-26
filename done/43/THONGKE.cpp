@@ -18,39 +18,23 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-const int nmax = 1e6 + 7;
-vector<bool> f(nmax, 1);
-vector<int> a;
-void sang()
-{
-	f[0] = f[1] = 0;
-	for(int i = 2; i*i <= nmax; i++)
-	{
-		if(f[i])
-		{
-			for(int j = i*i; j <= nmax; j += i)
-			{
-				f[j] = 0;
-			}
-		}
-	}
-	for(int i = 2; i <= nmax; i++)
-	{
-		if(f[i])
-		{
-			a.push_back(i);
-		}
-	}
-}
 signed main()
 {
-	open("");
-	sang();
-	int n;
+	open("THONGKE");
+	int n, c;
 	cin>>n;
-	for(int i = 0; i < n; i++)
+	vector<int> a(11, 0);
+	while(n--)
 	{
-		cout<<a[i];
+		cin>>c;
+		a[c]++;
+	}
+	for(int i = 0; i <= 10; i++)
+	{
+		if(a[i] != 0)
+		{
+			cout<<i<<" "<<a[i]<<"\n";
+		}
 	}
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";

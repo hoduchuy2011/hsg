@@ -44,7 +44,7 @@ void sang()
 }
 signed main()
 {
-	open("");
+	open("TIMSO");
 	sang();
 	int n;
 	cin>>n;

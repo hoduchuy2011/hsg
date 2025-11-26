@@ -18,40 +18,22 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-const int nmax = 1e6 + 7;
-vector<bool> f(nmax, 1);
-vector<int> a;
-void sang()
-{
-	f[0] = f[1] = 0;
-	for(int i = 2; i*i <= nmax; i++)
-	{
-		if(f[i])
-		{
-			for(int j = i*i; j <= nmax; j += i)
-			{
-				f[j] = 0;
-			}
-		}
-	}
-	for(int i = 2; i <= nmax; i++)
-	{
-		if(f[i])
-		{
-			a.push_back(i);
-		}
-	}
-}
 signed main()
 {
-	open("");
-	sang();
-	int n;
+	open("GAME");
+	int n, res = 0;
 	cin>>n;
-	for(int i = 0; i < n; i++)
+	vector<int> a(n);
+	for(auto &i : a)
 	{
-		cout<<a[i];
+		cin>>i;
 	}
+	sort(all(a), greater<int>());
+	for(int i = 0; i < min(n, 3); i++)
+	{
+		res += a[i];
+	}
+	cout<<res;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
