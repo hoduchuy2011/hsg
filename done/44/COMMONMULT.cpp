@@ -20,31 +20,15 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	int n, k, res = 0;
-	cin>>n>>k;
-	vector<int> a(n);
-	for(auto &i : a)
+	open("COMMONMULT");
+	ll n, a, b, c;
+	cin>>n>>a>>b>>c;
+	ll g = a * b / __gcd(a, b);
+	g = g * c / __gcd(g, c);
+	for(int i = g; i <= n; i += g)
 	{
-		cin>>i;
+		cout<<i<<' ';
 	}
-	multiset<int> s;
-	sort(all(a), greater<int>());
-	for(int i : a)
-	{
-		auto it = s.lower_bound(i + k);
-		if(it != s.end())
-		{
-			s.erase(it);
-			s.insert(i);
-		}
-		else
-		{
-			res += i;
-			s.insert(i);
-		}
-	}
-	cout<<res;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

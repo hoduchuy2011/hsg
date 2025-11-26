@@ -20,31 +20,16 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	int n, k, res = 0;
-	cin>>n>>k;
-	vector<int> a(n);
-	for(auto &i : a)
+	open("DIVCOUNT");
+	ll a, b, c;
+	cin>>a>>b>>c;
+	if(a % c == 0)
 	{
-		cin>>i;
+		a -= c;
 	}
-	multiset<int> s;
-	sort(all(a), greater<int>());
-	for(int i : a)
-	{
-		auto it = s.lower_bound(i + k);
-		if(it != s.end())
-		{
-			s.erase(it);
-			s.insert(i);
-		}
-		else
-		{
-			res += i;
-			s.insert(i);
-		}
-	}
-	cout<<res;
+	a += (c - (a % c));
+	b -= (b % c);
+	cout<<(b - a) / c + 1;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

@@ -21,8 +21,24 @@ void open(string s)
 signed main()
 {
 	open("");
-	char z = 'a';
-	cout<<(int)z;
+	long long n, ans = 0;
+	cin>>n;
+	for(int i = 2; i * i <= n; i++)
+	{
+		if(n % i == 0)
+		{
+			ans++;
+			while(n % i == 0)
+			{
+				n /= i;
+			}
+		}
+	}
+	if(n != 1)
+	{
+		ans++;
+	}
+	cout<<ans;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
