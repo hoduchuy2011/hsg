@@ -20,10 +20,12 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	pair<int, int> a = {2, 1};
-	sort({a.fi, a.se});
-	cout<<a.fi<<a.se;
+	open("ShenYun");
+	ll n, x, y;
+	cin>>n>>x>>y;
+	ll g = __gcd(x, y);
+	g = (x / g) * y;//lcm
+	cout<<n / g;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

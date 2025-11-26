@@ -20,10 +20,22 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	pair<int, int> a = {2, 1};
-	sort({a.fi, a.se});
-	cout<<a.fi<<a.se;
+	open("CuocThi");
+	int n, q;
+	cin>>n>>q;
+	vector<int> a(n);
+	for(auto &i : a)
+	{
+		cin>>i;
+	}
+	sort(all(a));
+	while(q--)
+	{
+		int x, y;
+		cin>>x>>y;
+		auto l = lower_bound(all(a), x), r = upper_bound(all(a), y);
+		cout<<r - l<<"\n";
+	}
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
