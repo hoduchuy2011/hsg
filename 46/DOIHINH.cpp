@@ -20,10 +20,32 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	string s = "0000000000000000000012";
-	int t = stoll(s);
-	cout<<t;
+	open("DOIHINH");
+	int n, c;
+	cin>>n;
+	map<int, int> a;
+	while(n--)
+	{
+		cin>>c;
+		a[c]++;
+	}
+	int cnt = 0, res = -1;
+	for(auto i : a)
+	{
+		if(i.se > cnt)
+		{
+			cnt = i.se;
+			res = i.fi;
+		}
+		else if(i.se == cnt)
+		{
+			if(i.fi > res)
+			{
+				res = i.fi;
+			}
+		}
+	}
+	cout<<res<<" "<<cnt;
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

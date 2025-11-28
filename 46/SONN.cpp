@@ -20,10 +20,22 @@ void open(string s)
 }
 signed main()
 {
-	open("");
-	string s = "0000000000000000000012";
-	int t = stoll(s);
-	cout<<t;
+	open("SONN");
+	int n, i;
+	vector<int> res;
+	cin>>n;
+	i = min(n, 9);
+	while(n > 0)
+	{
+		res.push_back(i);
+		n -= i;
+		i = min(n, i - 1);
+	}
+	sort(all(res));
+	for(auto i :res)
+	{
+		cout<<i;
+	}
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
