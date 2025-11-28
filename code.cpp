@@ -18,12 +18,36 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+void solve() 
+{
+	string s;
+	cin >> s;
+	set<string> v;
+	for (int i = 0; i < s.length(); i++) 
+	{
+		if (isdigit(s[i])) 
+		{
+			string num = "";
+			while (i < s.length() && isdigit(s[i])) 
+			{
+				num += s[i];
+				i++;
+			}
+			i--;
+			while (num.size() > 1 && num[0] == '0') 
+			{
+				num.erase(0, 1);
+			}
+			v.insert(num);
+		}
+	}
+	cout << v.size();
+}
+
 signed main()
 {
 	open("");
-	string s = "0000000000000000000012";
-	int t = stoll(s);
-	cout<<t;
+	solve();
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
