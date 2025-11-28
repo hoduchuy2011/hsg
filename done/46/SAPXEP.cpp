@@ -22,7 +22,7 @@ void open(string s)
 }
 int main()
 {
-	open("");
+	open("SAPXEP");
 	ll n;
 	cin >> n;
 	vector<pair<ll, ll>> a(n);
