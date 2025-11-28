@@ -18,63 +18,35 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-void solve() 
-{
-	int n, m;
-	cin >> n >> m;
-	map<int, int> f;
-	for(int i = 0; i < n; ++i) 
-	{
-		int x;
-		cin >> x;
-		for(int j = 2; j * j <= x; ++j) 
-		{
-			while(x % j == 0) 
-			{
-				f[j]++;
-				x /= j;
-			}
-		}
-		if(x > 1) 
-		{
-			f[x]++;
-		}
-	}
-	for(int i = 0; i < m; ++i) 
-	{
-		int x;
-		cin >> x;
-		for(int j = 2; j * j <= x; ++j) 
-		{
-			while(x % j == 0) 
-			{
-				f[j]--;
-				x /= j;
-			}
-		}
-		if(x > 1) f[x]--;
-	}
-	for(auto p : f) 
-	{
-		if(p.second != 0) 
-		{
-			cout << "NO\n";
-			return;
-		}
-	}
-	
-	cout << "YES\n";
-}
 signed main()
 {
-	open("");
-	int t;
-	cin>>t;
-	while(t--)
+	//open("MATMA");
+	string s, t;
+	vector<string> a;
+	int r = 0;
+	while(cin>>s)
 	{
-		solve();
+		t = "";
+		for(auto i : s)
+		{
+			if(i >= '0' && i <= '9')
+			{
+				r += (i - '0');
+			}
+			else
+			{
+				t += i;
+			}
+		}
+		reverse(all(t));
+		a.push_back(t);
+	}
+	cout<<r;
+	for(auto i : a)
+	{
+		cout<<" "<<i;
 	}
 	
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
+	//cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }

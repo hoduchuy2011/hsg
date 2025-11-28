@@ -18,7 +18,7 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-const int nmax = 1e4 + 5;
+const int nmax = 1e3 + 5;
 vector<ll> a(nmax + 5, 0);
 void sang()
 {
