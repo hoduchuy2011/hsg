@@ -1,66 +1,40 @@
-#include <bits/stdc++.h>
-#define ll long long
-#define st string
-#define fi first
-#define se second
-#define mod 1000000007
-#define all(x) x.begin(), x.end()
-
+#include <bits/stdc++.h>;
 using namespace std;
-
-void open(string s)
+ifstream fi("BEAUTSQ.INP");
+ofstream fo("BEAUTSQ.OUT");
+long long a,b,d;
+bool  c[10000002];
+long long rev(long long k)
 {
-	if (fopen((s + ".INP").c_str(), "r"))
+	long long h=0;
+	while (k>0)
 	{
-		freopen((s + ".INP").c_str(), "r", stdin);
-		freopen((s + ".OUT").c_str(), "w", stdout);
+		h=h*10+k%10;
+		k=k/10;
 	}
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
+	return h;
 }
-const int nmax = 1e6+5;
-vector<bool> f(nmax, 1);
-void sang()
+int main()
 {
-	f[0] = f[1] = 0;
-	for(int i = 2; i*i < nmax; i++)
-	{
-		if(f[i])
-		{
-			for(int j = i*i; j < nmax; j += i)
+	fi>>a>>b;
+	for (long long i=2;i<=10000002;i++)
+		c[i]=true;
+	c[0]=false;c[1]=false;
+	for (long long i=2;i*i<=10000002;i++)
+		if(c[i]==true)
 			{
-				f[j] = 0;
+				for (int j=i*i;j<=10000002;j=j+i)
+					c[j]=false;
 			}
-		}
-	}
-}
-bool dx(ll n)
-{
-	string s = to_string(n);
-	string t = s;
-	reverse(all(t));
-	return t == s;
-}
-signed main()
-{
-	open("BEAUTSQ");
-	sang();
-	ll a, b, res = 0;
-	cin>>a>>b;
-	ll c = sqrt(a), d = sqrt(b);
-	if(c * c < a)
-	{
-		c++;
-	}
-	for(ll i = c; i <= d; i++)
-	{
-		if(f[i] && dx(i * i))
+	for (long long i=2; i<=10000002;i++)
+	if(c[i]==true)
+		if(rev(i)!=i)
+			c[i]=false;
+	d=0;
+	for (long long  i=trunc(sqrt(a));i<=trunc(sqrt(b));i++)
+		if (c[i]==true && i*i>=a&&i*i<=b)
 		{
-			res++;
+			d=d+1;
 		}
-	}
-	cout<<res;
-	
-	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
-	return 0;
+	fo<<d;
 }

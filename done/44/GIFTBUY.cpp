@@ -1,56 +1,39 @@
-#include <bits/stdc++.h>
-#define ll long long
-#define st string
-#define fi first
-#define se second
-#define mod 1000000007
-#define all(x) x.begin(), x.end()
-
+#include<bits/stdc++.h>
 using namespace std;
-
-void open(string s)
+int n , k , a[100009] ;
+bool kt[100009] ;
+long long m = 0 ;
+int main()
 {
-	if (fopen((s + ".INP").c_str(), "r"))
-	{
-		freopen((s + ".INP").c_str(), "r", stdin);
-		freopen((s + ".OUT").c_str(), "w", stdout);
-	}
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL); cout.tie(NULL);
-}
-
-int main() 
-{
-	open("GIFTBUY");
-    int N;
-    ll K;
-    cin>>N>>K;
-    vector<ll> a(N);
-    for (int i = 0; i < N; ++i) 
+    freopen("GIFTBUY.inp","r",stdin) ; freopen("GIFTBUY.out","w",stdout) ;
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    cin >> n >> k ;
+    for ( int i = 1 ; i <= n ; i++ ) cin >> a[i] ;
+    sort(a+1,a+1+n) ;
+    memset(kt,false,sizeof(kt)) ;
+    for ( int i = n ; i >= 1 ; i-- )
     {
-        cin >> a[i];
-    }
-    sort(a.begin(), a.end());
-    ll res = 0;
-    multiset<ll> s;
-    for (int i = N - 1; i >= 0; --i) 
-    {
-        ll tmp = a[i];
-        ll x = tmp + K;
-        auto it = s.lower_bound(x);
-
-        if (it != s.end()) 
+        if( kt[i] == false )
         {
-            s.erase(it);
-            s.insert(tmp);
-        } 
-        else 
-        {
-            res += tmp;
-            s.insert(tmp);
+            int d = a[i] ;
+            kt[i] = true ;
+            if ( d >= k )
+            {
+                int j = upper_bound(a+1,a+1+n,d-k)-a ;
+                while ( j > 1 )
+                {
+                    if ( kt[j-1] == false )
+                    {
+                        kt[j-1] = true ;
+                        d = a[j-1] ;
+                        j = upper_bound(a+1,a+1+n,d-k)-a ;
+                    }
+                    else j-- ;
+                }
+            }
+            m = m + a[i] ;
         }
     }
-    cout << res;
-
-    return 0;
+    cout << m ;
 }
