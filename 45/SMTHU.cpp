@@ -18,61 +18,53 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-void solve() 
+const int nmax = 1e4 + 5;
+vector<ll> a(nmax + 5, 0);
+void sang()
 {
-	int n, m;
-	cin >> n >> m;
-	map<int, int> f;
-	for(int i = 0; i < n; ++i) 
+	for(int i = 1; i < nmax; i++)
 	{
-		int x;
-		cin >> x;
-		for(int j = 2; j * j <= x; ++j) 
+		for(int j = i; j < nmax; j += i)
 		{
-			while(x % j == 0) 
+			a[j] += i;
+		}
+	}
+}
+ll aris(ll n)
+{
+	ll s = 0;
+	for(ll i = 1; i * i <= n; i++)
+	{
+		if(n % i == 0)
+		{
+			s += i;
+			if(n/i != i)
 			{
-				f[j]++;
-				x /= j;
+				s += n/i;
 			}
 		}
-		if(x > 1) 
-		{
-			f[x]++;
-		}
 	}
-	for(int i = 0; i < m; ++i) 
-	{
-		int x;
-		cin >> x;
-		for(int j = 2; j * j <= x; ++j) 
-		{
-			while(x % j == 0) 
-			{
-				f[j]--;
-				x /= j;
-			}
-		}
-		if(x > 1) f[x]--;
-	}
-	for(auto p : f) 
-	{
-		if(p.second != 0) 
-		{
-			cout << "NO\n";
-			return;
-		}
-	}
-	
-	cout << "YES\n";
+	return s;
 }
 signed main()
 {
-	open("");
-	int t;
-	cin>>t;
-	while(t--)
+	open("SMTHU");
+	sang();
+	int q;
+	cin>>q;
+	while(q--)
 	{
-		solve();
+		ll n;
+		cin>>n;
+		if(n <= nmax)
+		{
+			cout<<a[n];
+		}
+		else
+		{
+			cout<<aris(n);
+		}
+		cout<<" ";
 	}
 	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";

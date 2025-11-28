@@ -67,7 +67,7 @@ void solve()
 }
 signed main()
 {
-	open("");
+	open("TTICH");
 	int t;
 	cin>>t;
 	while(t--)
