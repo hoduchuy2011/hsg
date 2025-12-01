@@ -22,7 +22,7 @@ void open(string s)
 }
 signed main() 
 {
-	open("");
+	open("TL");
 	int n;
 	cin>>n;
 	vector<pair<ll, int>> a(n);

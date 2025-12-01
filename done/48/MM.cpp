@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-01 15:04:12
+//Timestamp: 2025-12-01 13:57:13
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -21,36 +21,30 @@ void open(string s)
 	cin.tie(NULL); cout.tie(NULL);
 }
 signed main() 
-{
-	open("");
-	int n;
-	cin>>n;
-	vector<pair<ll, int>> a(n);
-	for(auto &i : a)
+{	
+	open("MM");
+	string s;
+	cin>>s;
+	s += "#";
+	string t = "";
+	set<int> a;
+	for(auto i : s)
 	{
-		cin>>i.fi>>i.se;
-	}
-	sort(all(a));
-	ll s = 0;
-	ll m = 2000000000000000000;
-	ll r = -2000000000000000000;
-
-	for (int i = 0; i < n; i++)
-	{
-		ll x = s - a[i].fi;
-		if (x < m)
+		if(isdigit(i))
 		{
-			m = x;
+			t += i;
 		}
-		s += a[i].se;
-		ll y = s - a[i].fi;
-		if (y - m > r)
+		else
 		{
-			r = y - m;
+			if(t.size() != 0)
+			{
+				a.insert(stoi(t));
+				t = "";
+			}
 		}
 	}
-	cout << r;
-
+	cout<<a.size();
+	
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }
