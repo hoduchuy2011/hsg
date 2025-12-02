@@ -22,7 +22,7 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
+	open("CAU2");
 	ll n;
 	cin>>n;
 	ll s = 0;

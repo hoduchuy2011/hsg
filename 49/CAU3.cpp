@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-02 12:03:38
+//Timestamp: 2025-12-01 22:34:36
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -19,20 +19,40 @@ void open(string s)
 	}
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
+}bool c(ll n)
+{
+	if (n < 2)
+	{
+		return false;
+	}
+	if (n == 2 || n == 3)
+	{
+		return true;
+	}
+	if (n % 2 == 0 || n % 3 == 0)
+	{
+		return false;
+	}
+	for (ll i = 5; i * i <= n; i += 6)
+	{
+		if (n % i == 0 || n % (i + 2) == 0)
+		{
+			return false;
+		}
+	}
+	return true;
 }
 signed main() 
 {	
-	open("");
+	open("CAU3");
 	ll n;
-	cin>>n;
-	ll s = 0;
-	while(n > 0)
+	cin >> n;
+	while (!c(n))
 	{
-		s += n % 10;
-		n /= 10;
+		n++;
 	}
-	cout<<s;
 
+	cout << n;
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
 }
