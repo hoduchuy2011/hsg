@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-02 14:05:46
+//Timestamp: 2025-12-02 12:09:35
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -22,18 +22,31 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
-	ll m, n;
-	cin>>m>>n;
-	ll res = 0;
-	for(ll i = 1; i <= n; i++)
+	open("CAU5");
+	ll n;
+	cin>>n;
+	ll c, m, s, b;
+	c = m = s = b = 0;
+	if (n > 90)
 	{
-		if(i % m == 0 || (i + 1) % m == 0)
+		b = n - 90;
+	}
+	for (ll i = b; i <= n; i++)
+	{
+		m = i;
+		s = 0;
+		while (m > 0)
 		{
-			res++;
+			s += m % 10;
+			m /= 10;
+		}
+
+		if (i + s == n)
+		{
+			c++;
 		}
 	}
-	cout<<res;
+	cout << c;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
