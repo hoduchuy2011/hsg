@@ -1,0 +1,18 @@
+[
+	{ "keys": ["ctrl+shift+l"], "command": "toggle_dark_mode" },
+	{
+    "keys": ["tab"],
+    "command": "generate_cpp_template",
+    "context": [
+        { "key": "preceding_text", "operator": "regex_match", "operand": "open$" },
+        { "key": "selection_empty", "operator": "equal", "operand": true }
+    ]
+    },
+    {
+        "keys": ["f3"],
+        "command": "build",
+        "args": {
+            "build_system": "Packages/User/codesnap.sublime-build"
+        }
+    }
+]
