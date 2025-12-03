@@ -30,14 +30,14 @@ int fib(int n)
 	{
 		return 1;
 	}
-	return fib(n - 1) + fib(n - 2);
+	return (fib(n - 1) % mod + fib(n - 2) % mod) % mod;
 }
 signed main() 
 {	
 	open("FLASHBACK");
 	int n, k;
 	cin>>n>>k;
-	cout<<n * fib(2 * k + 1);
+	cout<<n * fib(2 * k + 1) % mod;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
