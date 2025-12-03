@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-02 14:05:46
+//Timestamp: 2025-12-03 09:09
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,20 +20,38 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+void solve()
+{
+	int n;
+	cin >> n;
+	vector<int> freq(1005, 0); 
+	for (int i = 0; i < n; ++i) 
+	{
+		int c;
+		cin >> c;
+		freq[c]++;
+	}
+	for (int len = 1000; len >= 1; --len) 
+	{
+		if (freq[len] >= 4) 
+		{
+			long long res = (long long)len * len;
+			int cnt = freq[len] / 4;
+			cout << res << " " << cnt << "\n";
+			return;
+		}
+	}
+	cout << -1 << "\n";
+}
 signed main() 
 {	
 	open("");
-	ll m, n;
-	cin>>m>>n;
-	ll res = 0;
-	for(ll i = 1; i <= n; i++)
+	int t;
+	cin>>t;
+	while(t--)
 	{
-		if(i % m == 0 || (i + 1) % m == 0)
-		{
-			res++;
-		}
+		solve();
 	}
-	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
