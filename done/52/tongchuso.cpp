@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-04 09:09:19
+//Timestamp: 2025-12-04 07:20:36
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -22,18 +22,15 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
-	int n, x, y;
-	cin>>n>>x>>y;
-	vector<vector<char>> a(n, vector<char>(n));
-	for(auto i : a)
+	open("tongchuso");
+	string s;
+	cin>>s;
+	ll res = 0;
+	for(auto i : s)
 	{
-		for(auto j : i)
-		{
-			cin>>j;
-		}
+		res += i - '0';
 	}
-	
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-04 09:09:19
+//Timestamp: 2025-12-04 07:55:53
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,20 +20,31 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+bool cmp(pair<int, int> a, pair<int, int> b)
+{
+	return a.se < b.se;
+}
 signed main() 
 {	
-	open("");
-	int n, x, y;
-	cin>>n>>x>>y;
-	vector<vector<char>> a(n, vector<char>(n));
+	open("NHAC");
+	int n;
+	cin>>n;
+	vector<pair<int, int>> a;
+	for(int i = 1; i <= n; i++)
+	{
+		int c;
+		cin>>c;
+		a.push_back({i, c});
+	}
+	sort(all(a), cmp);
+	int res = 0, s = 0;
 	for(auto i : a)
 	{
-		for(auto j : i)
-		{
-			cin>>j;
-		}
+		s += i.se;
+		cout<<i.fi<<" "<<s<<"\n";
+		res += s;
 	}
-	
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

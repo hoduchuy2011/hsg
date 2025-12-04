@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-04 09:09:19
+//Timestamp: 2025-12-04 08:54:50
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,20 +20,37 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
+ll k, n;
+vector<int> a;
+void aris(ll i, ll s, string sr)
+{
+	if (s > k)
+    {
+        return;
+    }
+    if (i == n)
+    {
+        if (s == k)
+        {
+            cout << sr;
+            exit(0);
+        }
+        return;
+    }
+	aris(i + 1, s + a[i], sr + "1");
+	aris(i + 1, s, sr + "0");
+}
 signed main() 
 {	
-	open("");
-	int n, x, y;
-	cin>>n>>x>>y;
-	vector<vector<char>> a(n, vector<char>(n));
-	for(auto i : a)
+	open("CHONSO");
+	cin>>n;
+	a.resize(n);
+	for(auto &i : a)
 	{
-		for(auto j : i)
-		{
-			cin>>j;
-		}
+		cin>>i;
 	}
-	
+	cin>>k;
+	aris(0, 0, "");
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

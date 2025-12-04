@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-04 09:09:19
+//Timestamp: 2025-12-04 07:39:07
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,20 +20,37 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-signed main() 
-{	
-	open("");
-	int n, x, y;
-	cin>>n>>x>>y;
-	vector<vector<char>> a(n, vector<char>(n));
-	for(auto i : a)
+const int nmax = 1e7 + 5;
+bool f[nmax + 5];
+int a[nmax + 5];
+void sang()
+{
+	memset(f, 1, sizeof(f));
+	f[0] = f[1] = 0;
+	for(int i = 2; i*i <= nmax; i++)
 	{
-		for(auto j : i)
+		if(f[i])
 		{
-			cin>>j;
+			for(int j = i*i; j <= nmax; j += i)
+			{
+				f[j] = 0;
+			}
 		}
 	}
-	
+	a[0] = 0;
+	for(int i = 1; i <= nmax; i++)
+	{
+		a[i] = a[i - 1] + f[i];
+	}
+}
+signed main() 
+{	
+	open("BAUOC");
+	sang();
+	ll n;
+	cin>>n;
+	n = sqrt(n);
+	cout<<a[n];
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
