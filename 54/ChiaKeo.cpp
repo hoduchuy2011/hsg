@@ -22,7 +22,7 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
+	open("ChiaKeo");
 	ll n;
 	cin>>n;
 	vector<ll> a(n + 1);
