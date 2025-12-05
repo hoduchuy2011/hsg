@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-05 10:02:20
+//Timestamp: 2025-12-05 07:17:41
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -22,17 +22,22 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
-	string s;
-	deque<string> a;
-	while(cin>>s)
+	open("DemUoc");
+	ll n;
+	cin>>n;
+	ll cnt = 0;
+	for(ll i = 1; i*i <= n; i++)
 	{
-		a.push_front(s);
+		if(n % i == 0)
+		{
+			cnt++;
+			if(n/i != i)
+			{
+				cnt++;
+			}
+		}
 	}
-	for(auto i : a)
-	{
-		cout<<i<<' ';
-	}
+	cout<<cnt;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

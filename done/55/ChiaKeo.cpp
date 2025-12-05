@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-05 10:02:20
+//Timestamp: 2025-12-05 07:20:44
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -22,17 +22,26 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
-	string s;
-	deque<string> a;
-	while(cin>>s)
+	open("ChiaKeo");
+	ll n;
+	cin>>n;
+	vector<ll> a(n);
+	ll s = 0;
+	for(auto &i : a)
 	{
-		a.push_front(s);
+		cin>>i;
+		s += i;
 	}
-	for(auto i : a)
+	s -= a[0];
+	ll t = a[0], res = mod;
+	for(ll i = 1; i < n; i++)
 	{
-		cout<<i<<' ';
+		res = min(res, abs(t - s));
+		t += a[i];
+		s -= a[i];
 	}
+	res = min(res, abs(t - s));
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

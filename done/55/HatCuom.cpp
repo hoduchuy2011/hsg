@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-05 10:02:20
+//Timestamp: 2025-12-05 07:19:23
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -22,17 +22,13 @@ void open(string s)
 }
 signed main() 
 {	
-	open("");
+	open("HatCuom");
+	int n;
+	cin>>n;
 	string s;
-	deque<string> a;
-	while(cin>>s)
-	{
-		a.push_front(s);
-	}
-	for(auto i : a)
-	{
-		cout<<i<<' ';
-	}
+	cin>>s;
+	sort(all(s), greater<char>());
+	cout<<s;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
