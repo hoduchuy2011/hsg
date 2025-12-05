@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-05 10:18:57
+//Timestamp: 2025-12-05 10:16:32
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,43 +20,34 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-void solve()
+int tcs(ll n)
 {
-	ll a, b;
-    cin >> a >> b;
-    if (__gcd(a, b) > 1)
-    {
-        cout << 0;
-        return;
-    }
-    ll m = a;
-    for (ll i = 2; i * i <= a; i++)
-    {
-        if (a % i == 0)
-        {
-            m = min(m, i - (b % i));
-            while (a % i == 0)
-            {
-                a /= i;
-            }
-        }
-    }
-    if (a > 1)
-    {
-        m = min(m, a - (b % a));
-    }
-    cout << m;
+	int s = 0;
+	while(n > 0)
+	{
+		s += n % 10;
+		n /= 10;
+	}
+	return s;
 }
 signed main() 
 {	
-	open("");
-	int t;
-	cin>>t;
-	while(t--)
+	open("BPAIRS");
+	int n;
+	cin>>n;
+	ll c;
+	map<ll, int> a;
+	while(n--)
 	{
-		solve();
-		cout<<(t != 0 ? "\n" : "");
+		cin>>c;
+		a[tcs(c)]++;
 	}
+	ll res = 0;
+	for(auto i : a)
+	{
+		res += i.se * (i.se - 1) / 2;
+	}
+	cout<<res;
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

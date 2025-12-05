@@ -49,7 +49,7 @@ void solve()
 }
 signed main() 
 {	
-	open("");
+	open("DOOR");
 	int t;
 	cin>>t;
 	while(t--)
