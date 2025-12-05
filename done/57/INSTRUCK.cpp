@@ -43,7 +43,7 @@ ll f(ll n)
 }
 signed main() 
 {	
-	open("");
+	open("INSTRUCK");
 	ll a, b;
 	cin>>a>>b;
 	ll res = ((f(b) % mod) - (f(a - 1) % mod)) % mod;

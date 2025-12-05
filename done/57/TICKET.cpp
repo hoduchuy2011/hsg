@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-05 15:09:00
+//Timestamp: 2025-12-05 14:46:32
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,38 +20,45 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-ll f(ll n)
+bool check(int x, int n)
 {
-	ll l = 0, r = 1000000000;
-	ll k;
-	while(l <= r)
+	int a, b, c, d;
+	d = x % 10;
+	c = (x / 10) % 10;
+	b = (x / 100) % 10;
+	a = x / 1000;
+	int s1 = a + b, s2 = c + d;
+	ll mx = max(s1, s2);
+	ll mn = min(s1, s2);
+	ll res;
+	if (mn < 10)
 	{
-		ll m = l + (r - l) / 2;
-		if(m * (m + 1) / 2 <= n)
+		res = mx * 10 + mn;
+	}
+	else
+	{
+		res = mx * 100 + mn;
+	}
+	return res == n;
+}
+void solve()
+{
+	int n;
+	cin>>n;
+	for(int i = 1000; i <= 9999; i++)
+	{
+		if(check(i, n))
 		{
-			k = m;
-			l = m + 1;
-		}
-		else
-		{
-			r = m - 1;
+			cout<<i;
+			return;
 		}
 	}
-	ll s = k * (k + 1) * (2 * k + 1) / 6;
-	ll res = n - k * (k + 1) / 2;
-	return s + res * (k + 1);
+	cout<<0;
 }
 signed main() 
 {	
-	open("");
-	ll a, b;
-	cin>>a>>b;
-	ll res = ((f(b) % mod) - (f(a - 1) % mod)) % mod;
-	if(res < 0)
-	{
-		res += mod;
-	}
-	cout<<res;
+	open("TICKET");
+	solve();
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;

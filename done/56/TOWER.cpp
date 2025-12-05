@@ -1,5 +1,5 @@
 //Author: Lunaris
-//Timestamp: 2025-12-05 15:09:00
+//Timestamp: 2025-12-05 14:27:48
 #include <bits/stdc++.h>
 #define ll long long
 #define st string
@@ -20,38 +20,26 @@ void open(string s)
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL); cout.tie(NULL);
 }
-ll f(ll n)
-{
-	ll l = 0, r = 1000000000;
-	ll k;
-	while(l <= r)
+signed main() 
+{	
+	open("TOWER");
+	int n;
+	vector<int> a;
+	for(int i = 0; i < n; i++)
 	{
-		ll m = l + (r - l) / 2;
-		if(m * (m + 1) / 2 <= n)
+		int c;
+		cin>>c;
+		auto it = lower_bound(all(a), c);
+		if(it == a.end())
 		{
-			k = m;
-			l = m + 1;
+			a.push_back(c);
 		}
 		else
 		{
-			r = m - 1;
+			*it = c;
 		}
 	}
-	ll s = k * (k + 1) * (2 * k + 1) / 6;
-	ll res = n - k * (k + 1) / 2;
-	return s + res * (k + 1);
-}
-signed main() 
-{	
-	open("");
-	ll a, b;
-	cin>>a>>b;
-	ll res = ((f(b) % mod) - (f(a - 1) % mod)) % mod;
-	if(res < 0)
-	{
-		res += mod;
-	}
-	cout<<res;
+	cout<<a.size();
 
 	cerr<<"Time elapsed: "<<1.0 * clock() / CLOCKS_PER_SEC<<".s\n";
 	return 0;
